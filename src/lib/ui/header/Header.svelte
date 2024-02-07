@@ -3,10 +3,10 @@
 	export {className as class};
 
     import NavTabs from '$lib/ui/header/NavTabs.svelte';
-    import {name, description, themeColor, appleStatusBarStyle} from 'web-config';
+    import {appName} from 'web-config';
     import {url} from '$lib/utils/path';
 
-    const links = [
+    const links : {pathname: string; title: string}[] = [
         {pathname: '/', title: 'Home'},
         {pathname: '/about', title: 'About'},
         {pathname: '/pricing', title: 'Pricing'},
@@ -22,7 +22,7 @@
 
 </script>
 
-<div class={className}}>
+<div class={className}>
 
     <div class="container flex items-center justify-between px-8 py-4 mx-2"
       aria-label="Global" >
@@ -32,13 +32,13 @@
         <div class="flex items-center gap-2 shrink-0">
           <img
             class="w-8"
-            alt={name}
+            alt={appName}
             placeholder="blur"
             src={url('/icon.svg')}
             width="32"
             height="32"
           />
-          <span class="font-extrabold text-lg">{name}</span>
+          <span class="font-extrabold text-lg">{appName}</span>
         </div>
       </div>
   
@@ -73,7 +73,7 @@
             <path
               d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
             />
-          </svg>
+          </svg> 
         </button>
       </div>
   
@@ -87,13 +87,13 @@
             <!-- add link -->
             <img
               class="w-8"
-              alt={name}
+              alt={appName}
               placeholder="blur"
               src={url('/icon.svg')}
               width="32"
               height="32"
             />
-            <span class="font-extrabold text-lg">{name}</span>
+            <span class="font-extrabold text-lg">{appName}</span>
   
             <button
               type="button"

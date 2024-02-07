@@ -1,9 +1,8 @@
 <script lang="ts">
 	import '../app.postcss';
-  import NavTabs from '$lib/ui/header/NavTabs.svelte';
   import Header from '$lib/ui/header/Header.svelte';
 
-  import {name, description, themeColor, appleStatusBarStyle} from 'web-config';
+  import {appName, appDescription, themeColor, appleStatusBarStyle} from 'web-config';
   import {url} from '$lib/utils/path';
 
   const links = [
@@ -23,15 +22,15 @@
 </script>
 
 <svelte:head>
-	<title>{name}</title>
-	<meta name="title" content={name} />
-	<meta name="description" content={description} />
+	<title>{appName}</title>
+	<meta name="title" content={appName} />
+	<meta name="description" content={appDescription} />
 
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content={name} />
-	<meta property="og:description" content={description} />
-	<meta property="twitter:title" content={name} />
-	<meta property="twitter:description" content={description} />
+	<meta property="og:title" content={appName} />
+	<meta property="og:description" content={appDescription} />
+	<meta property="twitter:title" content={appName} />
+	<meta property="twitter:description" content={appDescription} />
 
 	<!-- minimal -->
 	<!-- TODO automatise -->
@@ -43,12 +42,12 @@
 	<!-- extra info -->
 	<meta name="theme-color" content={themeColor} />
 	<meta name="mobile-web-app-capable" content="yes" />
-	<meta name="application-name" content={name} />
+	<meta name="application-name" content={appName} />
 
 	<!-- apple -->
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content={appleStatusBarStyle} />
-	<meta name="apple-mobile-web-app-title" content={name} />
+	<meta name="apple-mobile-web-app-title" content={appName} />
 </svelte:head>
 
 <Header class="bg-base-200 "></Header>
