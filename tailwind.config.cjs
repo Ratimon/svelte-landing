@@ -64,9 +64,9 @@ const config = {
 		// darkTheme: 'dracula',
 		themes: [
 			// 'light',
-			'dark',
+			// 'dark',
 			// 'cupcake',
-			// 'bumblebee',
+			'bumblebee',
 			// 'emerald',
 			// 'corporate',
 			// 'synthwave',
