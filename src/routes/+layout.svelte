@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.postcss';
-    import NavTabs from '$lib/components/daisyui/NavTabs.svelte';
+    import NavTabs from '$lib/ui/header/NavTabs.svelte';
     import {name, description, themeColor, appleStatusBarStyle} from 'web-config';
     import {url} from '$lib/utils/path';
 

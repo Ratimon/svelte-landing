@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PageLink from '$lib/components/navigation/PageLink.svelte';
+	import PageLink from '$lib/ui/header/PageLink.svelte';
 
 	let className = '';
 	export {className as class};
