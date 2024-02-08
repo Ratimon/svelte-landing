@@ -2,23 +2,25 @@
 	let className = 'bg-base-200';
 	export {className as class};
 
-    import NavTabs from '$lib/ui/header/NavTabs.svelte';
-    import {appName} from 'web-config';
-    import {url} from '$lib/utils/path';
+  import NavTabs from '$lib/ui/header/NavTabs.svelte';
+  import ButtonGradient from '$lib/ui/buttons/ButtonGradient.svelte';
 
-    const links : {pathname: string; title: string}[] = [
-        {pathname: '/', title: 'Home'},
-        {pathname: '/about', title: 'About'},
-        {pathname: '/pricing', title: 'Pricing'},
-        {pathname: '/testimonials', title: 'Reviews'},
-        {pathname: '/faq', title: 'FAQ'},
-    ];
+  import {appName} from 'web-config';
+  import {url} from '$lib/utils/path';
 
-    let isOpen: boolean = false;
+  const links : {pathname: string; title: string}[] = [
+      {pathname: '/', title: 'Home'},
+      {pathname: '/about', title: 'About'},
+      {pathname: '/pricing', title: 'Pricing'},
+      {pathname: '/testimonials', title: 'Reviews'},
+      {pathname: '/faq', title: 'FAQ'},
+  ];
 
-    const setIsOpen = (open : boolean) => {
-        isOpen = open;
-    }
+  let isOpen: boolean = false;
+
+  const setIsOpen = (open : boolean) => {
+      isOpen = open;
+  }
 
 </script>
 
@@ -52,8 +54,10 @@
         />
       </div>
   
-      <!-- CTA  -->
-      <div class="hidden lg:flex lg:justify-end lg:flex-1">Connect</div>
+      <!-- CTA / Launch / Lead on big screens  -->
+      <div class="hidden lg:flex lg:justify-end lg:flex-1">
+        <ButtonGradient title="Launch App" />
+      </div>
   
       <!-- Burger button to open menu on mobile  -->
       <div class="flex lg:hidden">
@@ -127,7 +131,10 @@
             />
             </div>
             <div class="divider"></div>
-            <!-- todo CTA on small screens -->
+            <!-- CTA / Launch / Lead on small screens  -->
+            <div class="flex flex-col">
+              <ButtonGradient title="Launch App" />
+            </div>
           </div>
   
         </div>
