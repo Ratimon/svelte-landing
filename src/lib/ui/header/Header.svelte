@@ -10,16 +10,9 @@
   let className = 'bg-base-200';
 	export {className as class};
 
-  const links : {pathname: string; title: string}[] = [
-      {pathname: '/', title: 'Home'},
-      {pathname: '/about', title: 'About'},
-      {pathname: '/pricing', title: 'Pricing'},
-      {pathname: '/testimonials', title: 'Reviews'},
-      {pathname: '/faq', title: 'FAQ'},
-  ];
+  export let links : {pathname: string; title: string}[];
 
   let isOpen: boolean = false;
-
   const setIsOpen = (open : boolean) => {
       isOpen = open;
   }

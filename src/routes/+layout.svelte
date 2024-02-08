@@ -1,23 +1,16 @@
 <script lang="ts">
 	import '../app.postcss';
-  import Header from '$lib/ui/header/Header.svelte';
+	import Header from '$lib/ui/header/Header.svelte';
+	import {appName, appDescription, themeColor, appleStatusBarStyle} from 'web-config';
+	import {url} from '$lib/utils/path';
 
-  import {appName, appDescription, themeColor, appleStatusBarStyle} from 'web-config';
-  import {url} from '$lib/utils/path';
-
-  const links = [
+	const links = [
       {pathname: '/', title: 'Home'},
       {pathname: '/about', title: 'About'},
       {pathname: '/pricing', title: 'Pricing'},
       {pathname: '/testimonials', title: 'Reviews'},
       {pathname: '/faq', title: 'FAQ'},
   ];
-
-  let isOpen: boolean = false;
-
-  const setIsOpen = (open : boolean) => {
-    isOpen = open;
-  }
 
 </script>
 
@@ -50,6 +43,6 @@
 	<meta name="apple-mobile-web-app-title" content={appName} />
 </svelte:head>
 
-<Header class="bg-base-200 "></Header>
+<Header links={links} class="bg-base-200 "></Header>
 
 <slot />
