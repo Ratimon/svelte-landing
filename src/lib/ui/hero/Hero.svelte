@@ -1,5 +1,5 @@
 <script lang="ts">
-    import TestimonialsAvatars from "./TestimonialsAvatars.svelte";
+    import TestimonialsAvatars from "$lib/ui/testinomials/TestimonialsAvatars.svelte";
     import {appName} from 'web-config';
 </script>
   

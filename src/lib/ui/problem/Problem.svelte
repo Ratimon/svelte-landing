@@ -1,6 +1,6 @@
 <script lang="ts">
-    import Arrow from "./Arrow.svelte";
-    import Step from "./Step.svelte";
+    import Arrow from "$lib/ui/problem/Arrow.svelte";
+    import Step from "$lib/ui/problem/Step.svelte";
 </script>
   
 <section class="bg-neutral text-neutral-content">
