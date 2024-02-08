@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import TestimonialsAvatars from "./TestimonialsAvatars.svelte";
     import {appName} from 'web-config';
 </script>
