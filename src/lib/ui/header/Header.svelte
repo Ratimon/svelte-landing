@@ -1,12 +1,14 @@
 <script lang="ts">
-	let className = 'bg-base-200';
-	export {className as class};
-
+  import Icon from '@iconify/svelte';
+  
   import NavTabs from '$lib/ui/header/NavTabs.svelte';
   import ButtonGradient from '$lib/ui/buttons/ButtonGradient.svelte';
 
   import {appName} from 'web-config';
   import {url} from '$lib/utils/path';
+
+  let className = 'bg-base-200';
+	export {className as class};
 
   const links : {pathname: string; title: string}[] = [
       {pathname: '/', title: 'Home'},
@@ -67,17 +69,7 @@
           on:click={() => setIsOpen(true)}
         >
           <span class="sr-only">Open main menu</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            class="w-6 h-6 text-base-content"
-          >
-            <path
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg> 
+          <Icon icon="clarity:menu-line" />
         </button>
       </div>
   
@@ -105,17 +97,7 @@
               on:click={() => setIsOpen(false)}
             >
               <span class="sr-only">Close menu</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                class="w-6 h-6"
-              >
-                <path
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+                <Icon icon="clarity:menu-line" />
             </button>
           </div>
   
