@@ -1,11 +1,23 @@
 <script lang="ts">
 	import '../app.postcss';
+	// import { setContext, getContext } from 'svelte';
+	// import {derived, writable } from 'svelte/store';
+
+// 	const linksStore = writable([
+//       {pathname: writable('/'), title: writable('Home')},
+//       {pathname: writable('/about'), title: writable('About')},
+//       {pathname: writable('/pricing'), title: writable('Pricing')},
+//       {pathname: writable('/testimonials'), title: writable('Reviews')},
+//       {pathname: writable('/faq'), title: writable('FAQ')},
+//   ])
+
 	import Header from '$lib/ui/header/Header.svelte';
 	import {appName, appDescription, themeColor, appleStatusBarStyle} from 'web-config';
 	import {url} from '$lib/utils/path';
 
 	const links = [
       {pathname: '/', title: 'Home'},
+	  {pathname: '/features', title: 'Features'},
       {pathname: '/about', title: 'About'},
       {pathname: '/pricing', title: 'Pricing'},
       {pathname: '/testimonials', title: 'Reviews'},
