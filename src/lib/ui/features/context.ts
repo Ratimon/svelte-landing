@@ -8,7 +8,6 @@ type ActiveId = string | null
 type CollapseContext = boolean
 type ActiveIdContext = Writable<ActiveId>
 
-
 export function setAccordionOptions({ collapse }: AccordionOptions) {
 	const activeComponentId = writable<ActiveId>(null)
 	setContext<CollapseContext>('collapse', collapse)

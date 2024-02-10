@@ -18,17 +18,16 @@
 	// get the accordion options using the context api
 	const { collapse, activeComponentId  } = getAccordionOptions()
 
-	function setActive() {
+	function setActive(): void {
 		// update the store collapsed value in the context
 		$activeComponentId = componentId;
 
-		dispatch("featureId",{
+		dispatch("select-feature", {
 			featureId: featureId
 		});
-		
 	}
 
-	function toggleOpen() {
+	function toggleOpen(): void {
 		open = !open
 	}
 
@@ -54,12 +53,8 @@
 	>
 			
 		<span class={`flex flex-row duration-100 ${isOpen ? "text-primary" : ""}`}>
-			
-			<!-- <span class=""> -->
-				<Icon icon={iconName} />
-				<!-- <slot name="title" /> -->
-				<h3 class="inline"><slot name="title" /></h3>
-			<!-- </span> -->
+			<Icon icon={iconName} />
+			<h3 class="inline"><slot name="title" /></h3>
 		</span>
 	</button>
 

@@ -14,8 +14,8 @@
   $: selectedFormat = $featureSelectedStore?.format;
   $: selectedAlt = $featureSelectedStore?.alt;
 
-  function selectFeature(event:any) {
-    const featureId = event.detail.featureId;
+  function handlesSelect(event:CustomEvent) {
+    const featureId: number = event.detail.featureId;
     featureSelectedStore.select(features[featureId]);
   }
  
@@ -47,23 +47,20 @@
   <div class=" flex flex-col md:flex-row gap-12 md:gap-24">
     <div class="grid grid-cols-1 items-stretch gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-20">
 
-
       <ul class="w-full">
-
         <Accordion collapse >
             {#each features as feature, i}
                 <AccordionItem
                     featureId={i}
                     open={i === 0}
                     iconName={feature.iconName}
-                    on:featureId={selectFeature}
+                    on:select-feature={handlesSelect}
                 >
                     <svelte:fragment slot="title">{feature.title}</svelte:fragment>
                     <svelte:fragment slot="description">{feature.description}</svelte:fragment>
                 </AccordionItem>
             {/each}
         </Accordion>
-
       </ul>
 
       <AccordionMedia
