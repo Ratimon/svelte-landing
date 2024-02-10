@@ -1,12 +1,12 @@
-import type { Writable } from 'svelte/store'
+import type {
+	AccordionOptions,
+	ActiveId,
+	ActiveIdContext,
+	CollapseContext
+} from './types'
 
 import { writable } from 'svelte/store'
 import { setContext, getContext } from 'svelte'
-
-type AccordionOptions = { collapse: boolean }
-type ActiveId = string | null
-type CollapseContext = boolean
-type ActiveIdContext = Writable<ActiveId>
 
 export function setAccordionOptions({ collapse }: AccordionOptions) {
 	const activeComponentId = writable<ActiveId>(null)

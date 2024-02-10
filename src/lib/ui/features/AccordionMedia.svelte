@@ -1,5 +1,4 @@
 <script lang="ts">
-
     export let type: string = "";
     export let path: string = "";
     export let format: string = "";

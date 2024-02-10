@@ -2,9 +2,7 @@
 
   import type {Feature} from './Feature.Model';
   import {onMount, onDestroy} from 'svelte';
-  import Accordion from '$lib/ui/features/Accordion.svelte';
-  import AccordionItem from '$lib/ui/features/AccordionItem.svelte';
-  import AccordionMedia from '$lib/ui/features/AccordionMedia.svelte';
+  import { Accordion, AccordionItem, AccordionMedia } from '$lib/ui/features'
   import { featuresStore, featureSelectedStore } from './Feature.Store'
 
   export let features = [] as Feature[];

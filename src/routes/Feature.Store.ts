@@ -1,7 +1,6 @@
 import { writable } from 'svelte/store';
 import type { Feature, ActiveFeature } from './Feature.Model';
 
-
 function featureSelectedService() {
 	const {subscribe, set, update} = writable<ActiveFeature>(null);
 	return {
