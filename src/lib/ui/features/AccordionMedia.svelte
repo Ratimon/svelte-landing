@@ -6,7 +6,6 @@
     export let alt: string = "";
     export let style: string = "";
 
-    // console.log("type", type)
 
     const size = {
         width: 500,

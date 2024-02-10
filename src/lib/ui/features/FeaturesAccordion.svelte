@@ -1,27 +1,11 @@
 <script lang="ts">
 
-    import {onMount, onDestroy} from 'svelte';
-
     import type {Feature} from '$lib/ui/features/model.ts';
-
+    import {onMount, onDestroy} from 'svelte';
     import Accordion from '$lib/ui/features/Accordion.svelte';
     import AccordionItem from '$lib/ui/features/AccordionItem.svelte';
     import AccordionMedia from '$lib/ui/features/AccordionMedia.svelte';
-
-    import { getAccordionOptions } from '$lib/ui/features/context.ts'
-
     import { featuresStore, featureSelectedStore } from '$lib/ui/features/store.ts'
-
-    // const { collapse, activeComponentId , selectedFeatureId } = getAccordionOptions()
-    // const { collapse, activeComponentId  } = getAccordionOptions()
-
-
-    let featureSelected: Number = 0;
-
-    // const setFeatureSelected = (index : Number) => {
-    //     featureSelected = index;
-    //     console.log(index)
-    // }
 
     const features = [
     {
@@ -57,30 +41,16 @@
     },
     ] as Feature[];
 
-    // $: title = features[$selectedFeatureId].title;
-    // $: description = features[$selectedFeatureId].description;
-
-
     $: selectedType = $featureSelectedStore?.type;
-    
-    // console.log('selectedFeatureId', selectedFeatureId)
-    // console.log('features', features)
-    // console.log('selectedType', selectedType)
-
     $: selectedPath = $featureSelectedStore?.path;
     $: selectedFormat = $featureSelectedStore?.format;
     $: selectedAlt = $featureSelectedStore?.alt;
-
-
-    // $: iconName = features[$selectedFeatureId]?.iconName;
 
     function selectFeature(event:any) {
         const featureId = event.detail.featureId;
         console.log('featureId', featureId)
         featureSelectedStore.select(features[featureId]);
     }   
-
-
 
     onMount(() => {
         featuresStore.trigger(features);
@@ -135,8 +105,7 @@ id="features"
         format={selectedFormat}
         alt={selectedAlt}
         style = "rounded-2xl aspect-square w-full sm:w-[26rem]"
-        
-    />
+      />
 
     </div>
   </div>

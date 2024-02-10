@@ -17,18 +17,10 @@
 
 	// get the accordion options using the context api
 	const { collapse, activeComponentId  } = getAccordionOptions()
-	// const { collapse, activeComponentId , selectedFeatureId } = getAccordionOptions()
 
 	function setActive() {
 		// update the store collapsed value in the context
 		$activeComponentId = componentId;
-		// $selectedFeatureId = featureId;
-
-		// console.log($selectedFeatureId);
-
-		// selectedFeatureId.subscribe((value) => {
-		// 	console.log('setActive', value);
-		// });
 
 		dispatch("featureId",{
 			featureId: featureId

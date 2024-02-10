@@ -1,8 +1,5 @@
 import { writable } from 'svelte/store';
-
-import type { Feature, ActiveFeature, ActiveFeatureStore } from '$lib/ui/features/model.ts';
-
-// export const selectedFeature: ActiveFeatureStore  = writable(null)
+import type { Feature, ActiveFeature } from '$lib/ui/features/model.ts';
 
 
 function featureSelectedService() {
@@ -31,7 +28,6 @@ function featuresService() {
 			set(features);
 		},
 
-		/** Remove all items. */
 		clear: () => set([]),
 	};
 }

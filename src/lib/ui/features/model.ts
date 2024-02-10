@@ -1,7 +1,3 @@
-
-import type { Writable } from 'svelte/store'
-
-
 export interface Feature {
     title: string;
     description: string;
@@ -13,11 +9,3 @@ export interface Feature {
 }
 
 export type ActiveFeature = Feature | null
-export type ActiveFeatureStore = Writable<ActiveFeature>
-
-
-// export type PositionOpening = {
-//     balanceInWei: BigNumber,
-//     isPositionActive: boolean
-// }
-
