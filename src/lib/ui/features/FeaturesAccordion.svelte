@@ -1,24 +1,27 @@
 <script lang="ts">
 
+    import {onMount, onDestroy} from 'svelte';
+
+    import type {Feature} from '$lib/ui/features/model.ts';
+
     import Accordion from '$lib/ui/features/Accordion.svelte';
     import AccordionItem from '$lib/ui/features/AccordionItem.svelte';
+    import AccordionMedia from '$lib/ui/features/AccordionMedia.svelte';
+
+    import { getAccordionOptions } from '$lib/ui/features/context.ts'
+
+    import { featuresStore, featureSelectedStore } from '$lib/ui/features/store.ts'
+
+    // const { collapse, activeComponentId , selectedFeatureId } = getAccordionOptions()
+    // const { collapse, activeComponentId  } = getAccordionOptions()
 
 
-    export let featureSelected: Number = 0;
+    let featureSelected: Number = 0;
 
-    const setFeatureSelected = (index : Number) => {
-        featureSelected = index;
-    }
-
-    interface Feature {
-        title: string;
-        description: string;
-        type?: "video" | "image";
-        path?: string;
-        format?: string;
-        alt?: string;
-        iconName?: string;
-    }
+    // const setFeatureSelected = (index : Number) => {
+    //     featureSelected = index;
+    //     console.log(index)
+    // }
 
     const features = [
     {
@@ -28,6 +31,7 @@
         type: "video",
         path: "https://d3m8mk7e1mf7xn.cloudfront.net/app/newsletter.webm",
         format: "video/webm",
+        alt: "email",
         iconName: "ic:twotone-alternate-email",
     },
     {
@@ -53,6 +57,41 @@
     },
     ] as Feature[];
 
+    // $: title = features[$selectedFeatureId].title;
+    // $: description = features[$selectedFeatureId].description;
+
+
+    $: selectedType = $featureSelectedStore?.type;
+    
+    // console.log('selectedFeatureId', selectedFeatureId)
+    // console.log('features', features)
+    // console.log('selectedType', selectedType)
+
+    $: selectedPath = $featureSelectedStore?.path;
+    $: selectedFormat = $featureSelectedStore?.format;
+    $: selectedAlt = $featureSelectedStore?.alt;
+
+
+    // $: iconName = features[$selectedFeatureId]?.iconName;
+
+    function selectFeature(event:any) {
+        const featureId = event.detail.featureId;
+        console.log('featureId', featureId)
+        featureSelectedStore.select(features[featureId]);
+    }   
+
+
+
+    onMount(() => {
+        featuresStore.trigger(features);
+		featureSelectedStore.select(features[0]);
+    })
+
+    onDestroy(() => {
+		featuresStore.clear();
+        featureSelectedStore.clear();
+	});
+
 </script>
 
 <section
@@ -76,7 +115,12 @@ id="features"
 
         <Accordion collapse >
             {#each features as feature, i}
-                <AccordionItem open={i === 0} iconName={feature.iconName}>
+                <AccordionItem
+                    featureId={i}
+                    open={i === 0}
+                    iconName={feature.iconName}
+                    on:featureId={selectFeature}
+                >
                     <svelte:fragment slot="title">{feature.title}</svelte:fragment>
                     <svelte:fragment slot="description">{feature.description}</svelte:fragment>
                 </AccordionItem>
@@ -84,6 +128,15 @@ id="features"
         </Accordion>
 
       </ul>
+
+      <AccordionMedia
+        type={selectedType}
+        path={selectedPath}
+        format={selectedFormat}
+        alt={selectedAlt}
+        style = "rounded-2xl aspect-square w-full sm:w-[26rem]"
+        
+    />
 
     </div>
   </div>

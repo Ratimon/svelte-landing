@@ -1,22 +1,39 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte'
+  	const dispatch = createEventDispatcher()
+
 	import Icon from '@iconify/svelte';
 	import { slide } from 'svelte/transition'
 	import { getAccordionOptions } from './context'
 
-	// by default the accordion item is closed
-	export let open = true
-
+	export let featureId: number = 0;
 	export let iconName: string = "";
 
+	// by default the accordion item is closed
+	export let open = true
+	
 	// assign a unique identifier for the component
 	const componentId = crypto.randomUUID()
 
 	// get the accordion options using the context api
-	const { collapse, activeComponentId } = getAccordionOptions()
+	const { collapse, activeComponentId  } = getAccordionOptions()
+	// const { collapse, activeComponentId , selectedFeatureId } = getAccordionOptions()
 
 	function setActive() {
-		// update the storcollapsee value in the context
-		$activeComponentId = componentId
+		// update the store collapsed value in the context
+		$activeComponentId = componentId;
+		// $selectedFeatureId = featureId;
+
+		// console.log($selectedFeatureId);
+
+		// selectedFeatureId.subscribe((value) => {
+		// 	console.log('setActive', value);
+		// });
+
+		dispatch("featureId",{
+			featureId: featureId
+		});
+		
 	}
 
 	function toggleOpen() {
