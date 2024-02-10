@@ -35,4 +35,3 @@ export const featuresStore = featuresService();
 export const featureSelectedStore = featureSelectedService();
 
 
-// export class FeatureRepository {}
