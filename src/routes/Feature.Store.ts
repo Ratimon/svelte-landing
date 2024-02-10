@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import type { Feature, ActiveFeature } from '$lib/ui/features/model.ts';
+import type { Feature, ActiveFeature } from './Feature.Model';
 
 
 function featureSelectedService() {

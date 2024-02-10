@@ -6,7 +6,6 @@
     export let alt: string = "";
     export let style: string = "";
 
-
     const size = {
         width: 500,
         height: 500,
