@@ -4,8 +4,7 @@
   import Hero from '$lib/ui/hero/Hero.svelte';
   import Problem from '$lib/ui/problem/Problem.svelte';
   import FeaturesAccordion from './FeaturesAccordion.svelte';
-
-  import ButtonCheckout from '$lib/ui/buttons/ButtonCheckout.svelte';
+  import Pricing from './Pricing.svelte';
 
   const features = [
     {
@@ -46,5 +45,4 @@
 <Hero></Hero>
 <Problem></Problem>
 <FeaturesAccordion {features} ></FeaturesAccordion>
-
-<ButtonCheckout></ButtonCheckout>
+<Pricing></Pricing>
