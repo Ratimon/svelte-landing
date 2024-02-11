@@ -5,6 +5,8 @@
   import Problem from '$lib/ui/problem/Problem.svelte';
   import FeaturesAccordion from './FeaturesAccordion.svelte';
 
+  import ButtonCheckout from '$lib/ui/buttons/ButtonCheckout.svelte';
+
   const features = [
     {
         title: "Emails",
@@ -44,3 +46,5 @@
 <Hero></Hero>
 <Problem></Problem>
 <FeaturesAccordion {features} ></FeaturesAccordion>
+
+<ButtonCheckout></ButtonCheckout>
