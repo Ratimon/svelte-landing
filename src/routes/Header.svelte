@@ -13,7 +13,7 @@
   export let links : {pathname: string; title: string}[];
 
   let isOpen: boolean = false;
-  const setIsOpen = (open : boolean) => {
+  const setIsOpen = (open : boolean) :void => {
       isOpen = open;
   }
 
@@ -83,14 +83,13 @@
               height="32"
             />
             <span class="font-extrabold text-lg">{appName}</span>
-  
             <button
               type="button"
               class="-m-2.5 rounded-md p-2.5"
               on:click={() => setIsOpen(false)}
             >
               <span class="sr-only">Close menu</span>
-                <Icon icon="clarity:menu-line" />
+              <Icon icon="clarity:menu-line" />
             </button>
           </div>
   

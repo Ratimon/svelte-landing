@@ -1,9 +1,10 @@
 <script lang="ts">
 	import '../app.postcss';
 
-	import Header from '$lib/ui/header/Header.svelte';
 	import {url} from '$lib/utils/path';
 	import {appName, appDescription, themeColor, appleStatusBarStyle} from 'web-config';
+
+	import Header from './Header.svelte';
 
 	const links = [
       {pathname: '/', title: 'Home'},
