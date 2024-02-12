@@ -8,9 +8,7 @@
 
 	const links = [
       {pathname: '/', title: 'Home'},
-	  {pathname: '/features', title: 'Features'},
-      {pathname: '/about', title: 'About'},
-      {pathname: '/pricing', title: 'Pricing'},
+      {pathname: '#pricing', title: 'Pricing'},
       {pathname: '/testimonials', title: 'Reviews'},
       {pathname: '/faq', title: 'FAQ'},
   ];
