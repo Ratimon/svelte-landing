@@ -1,7 +1,7 @@
 <script lang="ts">
   import Icon from '@iconify/svelte';
   
-  import NavTabs from '$lib/ui/header/NavTabs.svelte';
+  import NavScrolls from '$lib/ui/header/NavScrolls.svelte';
   import ButtonGradient from '$lib/ui/buttons/ButtonGradient.svelte';
 
   import {appName} from 'web-config';
@@ -40,7 +40,7 @@
       </div>
   
       <div class="hidden lg:flex lg:justify-center lg:gap-12 lg:items-center" >
-        <NavTabs
+        <NavScrolls
           pages={links}
           class="link link-hover"
   
@@ -96,7 +96,7 @@
           <!-- links on small screens -->
           <div class="flow-root mt-6">
             <div class="py-4">
-              <NavTabs
+              <NavScrolls
                 pages={links}
                 class="flex flex-col gap-y-4 items-start"
         

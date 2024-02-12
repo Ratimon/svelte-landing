@@ -2,10 +2,24 @@
   import type {Feature} from './Feature.Model';
   import type {Plan } from './Pricing.Model';
 
+  import Header from './Header.svelte';
   import Hero from '$lib/ui/hero/Hero.svelte';
   import Problem from '$lib/ui/problem/Problem.svelte';
   import FeaturesAccordion from './FeaturesAccordion.svelte';
   import Pricing from './Pricing.svelte';
+
+  const links = [
+      {pathname: '#pricing', title: 'Pricing'},
+      {pathname: '#testimonials', title: 'Reviews'},
+      {pathname: '#faq', title: 'FAQ'},
+  	];
+
+  // // in case you want to use the multiple pages app 
+  // const links = [
+	// 	    {pathname: '/', title: 'Home'},
+  //     	{pathname: '/testimonials', title: 'Reviews'},
+  //     	{pathname: '/faq', title: 'FAQ'},
+  // 	];
 
   const features = [
     {
@@ -91,6 +105,7 @@
 
 </script>
   
+<Header links={links} class="bg-base-200 "></Header>
 <Hero></Hero>
 <Problem></Problem>
 <FeaturesAccordion {features} ></FeaturesAccordion>

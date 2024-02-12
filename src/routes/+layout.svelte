@@ -1,17 +1,7 @@
 <script lang="ts">
 	import '../app.postcss';
-
 	import {url} from '$lib/utils/path';
 	import {appName, appDescription, themeColor, appleStatusBarStyle} from 'web-config';
-
-	import Header from './Header.svelte';
-
-	const links = [
-      {pathname: '/', title: 'Home'},
-      {pathname: '#pricing', title: 'Pricing'},
-      {pathname: '/testimonials', title: 'Reviews'},
-      {pathname: '/faq', title: 'FAQ'},
-  ];
 
 </script>
 
@@ -43,7 +33,5 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content={appleStatusBarStyle} />
 	<meta name="apple-mobile-web-app-title" content={appName} />
 </svelte:head>
-
-<Header links={links} class="bg-base-200 "></Header>
 
 <slot />

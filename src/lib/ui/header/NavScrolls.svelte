@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PageLink from '$lib/ui/header/PageLink.svelte';
+	import ScrollLink from '$lib/ui/header/ScrollLink.svelte';
 
 	let className = '';
 	export {className as class};
@@ -12,8 +12,8 @@
 
 <div class={`tabs ${className}`}>
 	{#each pages as page}
-		<PageLink class={tabClass} {whenUnselected} {whenSelected} href={page.pathname}>
+		<ScrollLink class={tabClass} {whenUnselected} {whenSelected} href={page.pathname}>
 			{page.title}
-		</PageLink>
+		</ScrollLink>
 	{/each}
 </div>
