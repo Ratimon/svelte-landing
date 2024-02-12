@@ -12,7 +12,6 @@
 
   const links = [
       {pathname: '#pricing', title: 'Pricing'},
-      {pathname: '#testimonials', title: 'Reviews'},
       {pathname: '#faq', title: 'FAQ'},
   	];
 
@@ -127,5 +126,5 @@
 <Hero></Hero>
 <Problem></Problem>
 <FeaturesAccordion {features} ></FeaturesAccordion>
-<Pricing {plans}></Pricing>
-<FAQ {faqList} ></FAQ>
+<Pricing {plans} keyToNav={links[0].pathname}></Pricing>
+<FAQ {faqList} keyToNav={links[1].pathname}></FAQ>

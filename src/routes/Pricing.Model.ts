@@ -5,6 +5,7 @@ export type FeaturePlaned = {
 export interface Plan {
     priceId: string;
     name: string
+    isFeatured?: boolean;
     description: string;
     price: number;
     priceAnchor: number;

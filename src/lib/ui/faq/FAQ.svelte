@@ -3,11 +3,12 @@
     import type {FAQItemProps} from '$lib/ui/faq/types.ts';
     import FaqItem from '$lib/ui/faq/FaqItem.svelte';
 
+    export let keyToNav: string = '';
     export let faqList = [] as FAQItemProps[];
   
 </script>
 
-<section class="bg-base-200" id="faq">
+<section class="bg-base-200" id={keyToNav}>
     <div class="py-24 px-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
       <div class="flex flex-col text-left basis-1/2">
         <p class="inline-block font-semibold text-primary mb-4">FAQ</p>

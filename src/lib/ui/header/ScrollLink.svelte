@@ -12,7 +12,8 @@
     const handleAnchorClick =  (event: Event | undefined) => {
         if (!event) return;
 		const target = event.currentTarget as HTMLTextAreaElement;
-        const anchorId = target.getAttribute("href")?.replace('#', '');
+        // const anchorId = target.getAttribute("href")?.replace('#', '');
+		const anchorId = target.getAttribute("href");
 		const anchor = document.getElementById(anchorId!)
 		window.scrollTo({
 			top: anchor?.offsetTop,

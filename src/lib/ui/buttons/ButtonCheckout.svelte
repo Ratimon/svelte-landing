@@ -2,7 +2,7 @@
 
     import {appName} from 'web-config';
     
-    let priceId: string ;
+    export let priceId: string ;
     let mode: "payment" | "subscription" = "payment";
 
 
