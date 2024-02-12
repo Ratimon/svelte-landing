@@ -9,6 +9,7 @@
   import FeaturesAccordion from './FeaturesAccordion.svelte';
   import Pricing from './Pricing.svelte';
   import FAQ from '$lib/ui/faq/FAQ.svelte';
+  import CTA from './CTA.svelte';
 
   const links = [
       {pathname: '#pricing', title: 'Pricing'},
@@ -128,3 +129,4 @@
 <FeaturesAccordion {features} ></FeaturesAccordion>
 <Pricing {plans} keyToNav={links[0].pathname}></Pricing>
 <FAQ {faqList} keyToNav={links[1].pathname}></FAQ>
+<CTA></CTA>
