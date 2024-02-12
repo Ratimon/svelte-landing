@@ -1,26 +1,9 @@
 <script lang="ts">
 
+    import type {FAQItemProps} from '$lib/ui/faq/types.ts';
     import FaqItem from '$lib/ui/faq/FaqItem.svelte';
 
-    interface FAQItemProps {
-        question: string;
-        answer: string;
-    }
-  
-    export const faqList = [
-        {
-            question: "What do I get exactly?",
-            answer: "Loreum Ipseum",
-        },
-        {
-            question: "Can I get a refund?",
-            answer: "Yes! You can request a refund within 7 days of your purchase. Reach outby email",
-        },
-        {
-            question: "I have another question",
-            answer: "Cool, contact us by email",
-        },
-    ] as FAQItemProps[];
+    export let faqList = [] as FAQItemProps[];
   
 </script>
 

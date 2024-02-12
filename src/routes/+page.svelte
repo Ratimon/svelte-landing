@@ -1,6 +1,7 @@
 <script  lang="ts">
   import type {Feature} from './Feature.Model';
   import type {Plan } from './Pricing.Model';
+  import type {FAQItemProps} from '$lib/ui/faq/types.ts';
 
   import Header from './Header.svelte';
   import Hero from '$lib/ui/hero/Hero.svelte';
@@ -104,6 +105,22 @@
       },
     ] as Plan[];
 
+    const faqList = [
+        {
+            question: "What do I get exactly?",
+            answer: "Loreum Ipseum",
+        },
+        {
+            question: "Can I get a refund?",
+            answer: "Yes! You can request a refund within 7 days of your purchase. Reach outby email",
+        },
+        {
+            question: "I have another question",
+            answer: "Cool, contact us by email",
+        },
+    ] as FAQItemProps[];
+  
+
 </script>
   
 <Header links={links} class="bg-base-200 "></Header>
@@ -111,4 +128,4 @@
 <Problem></Problem>
 <FeaturesAccordion {features} ></FeaturesAccordion>
 <Pricing {plans}></Pricing>
-<FAQ></FAQ>
+<FAQ {faqList} ></FAQ>
