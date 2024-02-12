@@ -7,6 +7,7 @@
   import Problem from '$lib/ui/problem/Problem.svelte';
   import FeaturesAccordion from './FeaturesAccordion.svelte';
   import Pricing from './Pricing.svelte';
+  import FAQ from '$lib/ui/faq/FAQ.svelte';
 
   const links = [
       {pathname: '#pricing', title: 'Pricing'},
@@ -110,3 +111,4 @@
 <Problem></Problem>
 <FeaturesAccordion {features} ></FeaturesAccordion>
 <Pricing {plans}></Pricing>
+<FAQ></FAQ>

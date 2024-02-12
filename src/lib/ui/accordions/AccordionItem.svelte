@@ -3,8 +3,8 @@
   	const dispatch = createEventDispatcher()
 
 	import Icon from '@iconify/svelte';
-	import { slide } from 'svelte/transition'
-	import { getAccordionOptions } from './context'
+	import { slide } from 'svelte/transition';
+	import { getAccordionOptions } from './context';
 
 	export let featureId: number = 0;
 	export let iconName: string = "";
@@ -46,7 +46,7 @@
 
 <li>
 	<button
-		on:click={handleClick}
+		on:click|preventDefault={handleClick}
 		class="relative flex gap-2 items-center w-full py-5 text-base font-medium text-left md:text-lg"
 		aria-expanded={isOpen}
 		aria-controls="accordion-{componentId}"

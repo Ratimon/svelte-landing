@@ -59,7 +59,7 @@
         <button
           type="button"
           class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
-          on:click={() => setIsOpen(true)}
+          on:click|preventDefault={() => setIsOpen(true)}
         >
           <span class="sr-only">Open main menu</span>
           <Icon icon="clarity:menu-line" />
@@ -86,7 +86,7 @@
             <button
               type="button"
               class="-m-2.5 rounded-md p-2.5"
-              on:click={() => setIsOpen(false)}
+              on:click|preventDefault={() => setIsOpen(false)}
             >
               <span class="sr-only">Close menu</span>
               <Icon icon="clarity:menu-line" />
