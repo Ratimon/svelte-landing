@@ -36,10 +36,6 @@
       <ul class="basis-1/2">
 
         {#each faqList as item, i}
-            <!-- <FaqItem
-                question={item.question}
-                answer={item.answer} >
-            > -->
             <FaqItem>
 
                 <svelte:fragment slot="question">

@@ -1,6 +1,4 @@
 <script lang="ts">
-    import { createEventDispatcher } from 'svelte'
-  	const dispatch = createEventDispatcher()
 
 	import {page} from '$app/stores';
 	import {isParentRoute, isSameRoute} from '$lib/utils/path';
@@ -21,7 +19,6 @@
 			behavior: 'smooth'
 		})
 	}
-
 
 </script>
 

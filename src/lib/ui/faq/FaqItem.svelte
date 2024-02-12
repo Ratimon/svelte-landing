@@ -2,9 +2,6 @@
 
     import { slide } from 'svelte/transition';
 
-    // export let question: string = '';
-    // export let answer: string = '';
-
     let isOpen: boolean = false;
     const setIsOpen = (open : boolean) :void => {
         isOpen = open;
@@ -23,7 +20,6 @@
       <span
         class={`flex-1 text-base-content ${isOpen ? "text-primary" : ""}`}
       >
-        <!-- {question} -->
         <slot name="question" />
       </span>
       <svg
@@ -59,26 +55,8 @@
             aria-hidden={!isOpen}
         >
         </div>
-
-        <!-- <div class="pb-5 leading-relaxed">{answer}</div> -->
         <slot name="answer" />
-
     {/if}
-
-
-
-    <!-- {#if isOpen}
-        <div
-            class={`transition-all duration-300 ease-in-out text-base-content-secondary overflow-hidden`}
-            transition:slide|local
-            aria-hidden={!isOpen}
-            aria-labelledby="accordion-{componentId}"
-        >
-            <div class="pb-5 leading-relaxed">
-                <slot name="description" />
-            </div>
-        </div>
-    {/if} -->
 
 </li>
 
