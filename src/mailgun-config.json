@@ -1,0 +1,7 @@
+{
+    "subdomain": "mg",
+    "fromNoReply": "Test <noreply@mg.test.com>",
+    "fromAdmin": "User1 at ShipFast <mg.test.com>",
+    "supportEmail": "User1@mg.shipfa.st",
+    "forwardRepliesTo": "User1.louvion@gmail.com"
+}

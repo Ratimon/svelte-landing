@@ -10,6 +10,7 @@
   import Pricing from './Pricing.svelte';
   import FAQ from '$lib/ui/faq/FAQ.svelte';
   import CTA from './CTA.svelte';
+  import Footer from './Footer.svelte';
 
   const links = [
       {pathname: '#pricing', title: 'Pricing'},
@@ -130,3 +131,4 @@
 <Pricing {plans} keyToNav={links[0].pathname}></Pricing>
 <FAQ {faqList} keyToNav={links[1].pathname}></FAQ>
 <CTA></CTA>
+<Footer></Footer>

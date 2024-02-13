@@ -1,9 +1,5 @@
 <script lang="ts">
-
-    import {url} from '$lib/utils/path';
-
 	import {appName} from 'web-config';
-
 </script>
 
 <section class=" relative hero overflow-hidden max-h-full"  >

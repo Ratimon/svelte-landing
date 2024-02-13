@@ -23,6 +23,7 @@ const config = {
 		alias: {
 			// alias for web-config
 			'web-config': './src/web-config.json',
+			'mailgun-config': './src/mailgun-config.json',
 		},
 	}
 };
