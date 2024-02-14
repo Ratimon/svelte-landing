@@ -12,10 +12,16 @@
   import CTA from './CTA.svelte';
   import Footer from './Footer.svelte';
 
-  const links = [
+  const headLinks = [
       {pathname: '#pricing', title: 'Pricing'},
       {pathname: '#faq', title: 'FAQ'},
   	];
+
+  const footLinks = [
+      {pathname: '#pricing', title: 'Pricing'},
+      {pathname: '/blog', title: 'Blog'},
+  	];
+
 
   // // in case you want to use the multiple pages app 
   // const links = [
@@ -124,11 +130,11 @@
 
 </script>
   
-<Header links={links} class="bg-base-200 "></Header>
+<Header links={headLinks} class="bg-base-200 "></Header>
 <Hero></Hero>
 <Problem></Problem>
 <FeaturesAccordion {features} ></FeaturesAccordion>
-<Pricing {plans} keyToNav={links[0].pathname}></Pricing>
-<FAQ {faqList} keyToNav={links[1].pathname}></FAQ>
+<Pricing {plans} keyToNav={headLinks[0].pathname}></Pricing>
+<FAQ {faqList} keyToNav={headLinks[1].pathname}></FAQ>
 <CTA></CTA>
-<Footer></Footer>
+<Footer links={footLinks}></Footer>

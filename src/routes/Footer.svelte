@@ -1,8 +1,14 @@
 <script lang="ts">
 	import {appName, appDescription} from 'web-config';
-    import {supportEmail} from 'mailgun-config';
+  import {supportEmail} from 'mailgun-config';
 
-    import {url} from '$lib/utils/path';
+  import {url} from '$lib/utils/path';
+
+  import ScrollLink from '$lib/ui/header/ScrollLink.svelte';
+  import PageLink from '$lib/ui/header/PageLink.svelte';
+
+  export let links : {pathname: string; title: string}[];
+
 </script>
 
 
@@ -42,26 +48,32 @@
 
             <div class="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
 
-                {#if supportEmail}
-                    <a
-                        href={`mailto:${supportEmail}`}
-                        target="_blank"
-                        class="link link-hover"
-                        aria-label="Contact Support"
-                    >
-                        Support
-                    </a>
-                {/if}
+              {#if supportEmail}
+                <PageLink
+                  class="link link-hover"
+                  whenUnselected="tab tab-sm tab-lifted flex-1"
+                  whenSelected="tab-active font-black !bg-base-100"
+                  href={`mailto:${supportEmail}`}
+                >
+                    Support
+                </PageLink>
+              {/if}
 
-              <a href="/#pricing" class="link link-hover">
-                Pricing
-              </a>
-              <a href="/blog" class="link link-hover">
-                Blog
-              </a>
-              <a href="/#" target="_blank" class="link link-hover">
-                Affiliates
-              </a>
+              <ScrollLink
+                class="link link-hover"
+                whenUnselected="tab tab-sm tab-lifted flex-1"
+                whenSelected="tab-active font-black !bg-base-100"
+                href={links[0].pathname}>
+                {links[0].title}
+              </ScrollLink>
+              <PageLink
+                class="link link-hover"
+                whenUnselected="tab tab-sm tab-lifted flex-1"
+                whenSelected="tab-active font-black !bg-base-100"
+                href={links[1].pathname}>
+                {links[1].title}
+              </PageLink>
+
             </div>
           </div>
 

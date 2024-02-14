@@ -43,7 +43,6 @@
         <NavScrolls
           pages={links}
           class="link link-hover"
-  
           tabClass="tab tab-sm tab-lifted flex-1"
           whenSelected="tab-active font-black !bg-base-100"
         />
