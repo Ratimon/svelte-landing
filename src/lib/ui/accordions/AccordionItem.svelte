@@ -62,7 +62,7 @@
 		<!-- local transitions only play when the block they belong to is created or destroyed -->
 		<div
 			class={`transition-all duration-300 ease-in-out text-base-content-secondary overflow-hidden`}
-			transition:slide|local
+			in:slide|local = {{  delay: 200, duration: 100 }}
 			aria-hidden={!isOpen}
 			aria-labelledby="accordion-{componentId}"
 		>
