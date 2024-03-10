@@ -3,5 +3,13 @@
 	"appTitle": "Landing Page",
 	"appDescription": "Landing Page",
 	"themeColor": "#000000",
-	"appleStatusBarStyle": "black-translucent"
+	"appleStatusBarStyle": "black-translucent",
+	"icon": "static/icon.svg",
+	"maskableIcons": [
+		{
+			"src": "../maskable_icon_512x512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	]
 }
