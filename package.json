@@ -19,6 +19,7 @@
 		"@tailwindcss/typography": "^0.5.10",
 		"autoprefixer": "^10.4.17",
 		"daisyui": "^4.6.1",
+		"mdsvex": "^0.11.0",
 		"postcss": "^8.4.34",
 		"postcss-load-config": "^5.0.2",
 		"pwag": "^0.2.0",
