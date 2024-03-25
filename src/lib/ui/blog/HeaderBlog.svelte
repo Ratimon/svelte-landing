@@ -1,5 +1,6 @@
 <script lang="ts">
     import Icon from '@iconify/svelte';
+    import { Popover, PopoverButton, PopoverPanel} from "@rgossiaux/svelte-headlessui";
     
     import NavTabs from '$lib/ui/header/NavTabs.svelte';
     import ButtonGradient from '$lib/ui/buttons/ButtonGradient.svelte';
@@ -47,14 +48,57 @@
               whenSelected="tab-active font-black !bg-base-100"
             />
 
-            <!-- todo -->
+            <!-- todo : abstract -->
             <!-- <ButtonPopoverCategories /> -->
+            <Popover class="relative z-30" >
+                <PopoverButton
+                    class="link no-underline flex flex-nowrap items-center gap-1 text-base-content/80 hover:text-base-content active:text-base-content focus:text-base-content duration-100"
+                    title="Open Blog categories"
+                    >
+                    Categories
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class={`w-5 h-5 duration-200}`}
+                  >
+                    <path 
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    />
+                  </svg>
+                </PopoverButton>
+
+                <!-- <Transition></Transition> -->
+              
+                <PopoverPanel class="absolute left-0 z-30 mt-3 w-screen max-w-full sm:max-w-sm transform">
+                    <div class="overflow-hidden rounded-box shadow-lg ring-1 ring-base-content ring-opacity-5">
+                        <div class="relative grid gap-2 bg-base-100 p-2 overflow-hidden">
+                            <a class="block text-left p-3 -m-1 cursor-pointer hover:bg-base-200 rounded-box duration-200" href="/features">Features</a>
+                            <a class="block text-left p-3 -m-1 cursor-pointer hover:bg-base-200 rounded-box duration-200" href="/tutorials">Tutorials</a>
+                        </div>
+                    </div>
+              
+                </PopoverPanel>
+              </Popover>
+
 
         </div>
 
         <!-- CTA / Launch / Lead on big screens  -->
         <div class="hidden lg:flex lg:justify-end lg:flex-1">
             <ButtonGradient title="Launch App" />
+        </div>
+
+        <!-- Burger button to open menu on mobile  -->
+        <div class="flex lg:hidden">
+            <button
+            type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+            on:click|preventDefault={() => setIsOpen(true)}
+            >
+                <span class="sr-only">Open main menu</span>
+                <Icon icon="clarity:menu-line" />
+            </button>
         </div>
 
         <!-- Mobile menu, show/hide based on menu state. -->
@@ -66,13 +110,13 @@
                 <div class="flex items-center justify-between">
                     <!-- add link -->
                     <img
-                    class="w-8"
-                    alt={appName}
-                    placeholder="blur"
-                    src={url('/icon.svg')}
-                    width="32"
-                    height="32"
-                    />
+                        class="w-8"
+                        alt={appName}
+                        placeholder="blur"
+                        src={url('/icon.svg')}
+                        width="32"
+                        height="32"
+                        />
                     <span class="font-extrabold text-lg">{appName}</span>
                     <button
                         type="button"
@@ -80,7 +124,7 @@
                         on:click|preventDefault={() => setIsOpen(false)}
                     >
                     <span class="sr-only">Close menu</span>
-                        <Icon  icon="clarity:menu-line" />
+                        <Icon icon="clarity:menu-line" />
                     </button>
                 </div>
 
@@ -94,7 +138,6 @@
                             tabClass="tab tab-sm tab-lifted flex-1"
                             whenSelected="tab-active font-black !bg-base-100"
                         />
-
                         <!-- to do : inside -->
                         <!-- <ButtonAccordionCategories /> -->
                     </div>
