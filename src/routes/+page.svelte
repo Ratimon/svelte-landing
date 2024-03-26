@@ -130,6 +130,7 @@
 
 </script>
   
+<!-- todo move to layout -->
 <Header links={headLinks} class="bg-base-200 "></Header>
 <Hero></Hero>
 <Problem></Problem>

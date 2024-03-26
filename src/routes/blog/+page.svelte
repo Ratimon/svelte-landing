@@ -35,6 +35,11 @@
 	<meta name="apple-mobile-web-app-title" content={appName} />
 </svelte:head>
 
-<main class="flex w-full min-h-screen">
-    Test
-</main>
+<section class="text-center max-w-xl mx-auto mt-12 mb-24 md:mb-32">
+	<h1 class="font-extrabold text-3xl lg:text-5xl tracking-tight mb-6">
+	  The {appName} Blog
+	</h1>
+	<p class="text-lg opacity-80 leading-relaxed">
+		Updates, stories, and announcements from the {appName} Labs team.
+	</p>
+</section>

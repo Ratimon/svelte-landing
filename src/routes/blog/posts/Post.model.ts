@@ -1,5 +1,4 @@
-export type Categories = 'sveltekit' | 'svelte'
-
+export type Categories = 'feature' | 'tutorial'
 
 export type Post = {
 	title: string
@@ -9,3 +8,4 @@ export type Post = {
 	categories: Categories[]
 	published: boolean
 }
+
