@@ -9,7 +9,7 @@ export type Post = {
 	published: boolean
 }
 
-export type categoryType = {
+export type CategoryType = {
 	slug: CategoriesSlug;
 	title: string;
 	titleShort?: string;

@@ -1,6 +1,6 @@
 ---
 title: First post
-description: First post.
+description: First post Description.
 date: '2023-4-14'
 categories:
   - feature

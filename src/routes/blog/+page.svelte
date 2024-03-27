@@ -1,7 +1,7 @@
 <script lang="ts">
     import '../../app.postcss';
 
-	import type { categoryType, CategoriesSlug } from './Blog.model'
+	import type { CategoryType, CategoriesSlug } from './Blog.model'
 
 	import {appName} from 'web-config';
 
@@ -11,8 +11,8 @@
 		tutorial: "tutorial",
 	};
 
-	// All the blog categories data display in the /blog/category/[categoryI].js pages.
-	const categories: categoryType[] = [
+	// All the blog categories data display in the /blog/category/[categoryId].ts pages.
+	const categories: CategoryType[] = [
 	{
 		// The slug to use in the URL, from the categorySlugs object above.
 		slug: categorySlugs.feature,
@@ -37,6 +37,15 @@
 	},
 	];
 
+	export let data;
+	// postsToDisplay = data.posts;
+
+	$: postsToDisplay = data.posts.sort(
+        (a, b) =>
+          new Date(b.date).valueOf() - new Date(a.date).valueOf()
+      )
+      .slice(0, 6);
+
 </script>
 
 <section class="text-center max-w-xl mx-auto mt-12 mb-24 md:mb-32">
@@ -47,3 +56,19 @@
 		Updates, stories, and announcements from the {appName} Labs team.
 	</p>
 </section>
+
+
+<ul class="posts">
+	{#each postsToDisplay as post}
+		<li>
+			<a href={post.slug}>{post.title}</a>
+
+			{new Date(post.date).toLocaleDateString("en-US", {
+                month: "long",
+                day: "numeric",
+              })}
+			  
+			<p>{post.description}</p>
+		</li>
+	{/each}
+</ul>
