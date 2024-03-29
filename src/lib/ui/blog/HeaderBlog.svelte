@@ -18,7 +18,7 @@
         isOpen = open;
     }
   
-  </script>
+</script>
 
 <header class={className}>
     <nav class="max-w-7xl flex items-center justify-between px-8 py-3 mx-auto" >

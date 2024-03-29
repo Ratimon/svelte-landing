@@ -1,7 +1,8 @@
 <script lang="ts">
     import '../../app.postcss';
 
-	import type { CategoryType, CategoriesSlug } from './Blog.model'
+	import type { PostType, CategoryType, CategoriesSlug } from './Blog.model'
+	import CardArticle from '$lib/ui/blog/CardArticle.svelte';
 
 	import {appName} from 'web-config';
 
@@ -38,14 +39,22 @@
 	];
 
 	export let data;
-	// postsToDisplay = data.posts;
 
-	$: postsToDisplay = data.posts.sort(
+	$: postsWithCategory  = data.posts.map( post => {
+		const cachedCategories : CategoryType[] = post.categories.map( categoryString => {
+			return categories.find((category) => category.slug === categoryString)!;
+		} );
+		return {
+            ...post,
+            categories: cachedCategories,
+        };
+	});
+
+	$: postsToDisplay = postsWithCategory.sort(
         (a, b) =>
           new Date(b.date).valueOf() - new Date(a.date).valueOf()
       )
       .slice(0, 6);
-
 </script>
 
 <section class="text-center max-w-xl mx-auto mt-12 mb-24 md:mb-32">
@@ -58,17 +67,12 @@
 </section>
 
 
-<ul class="posts">
-	{#each postsToDisplay as post}
-		<li>
-			<a href={post.slug}>{post.title}</a>
-
-			{new Date(post.date).toLocaleDateString("en-US", {
-                month: "long",
-                day: "numeric",
-              })}
-			  
-			<p>{post.description}</p>
-		</li>
+<section class="grid lg:grid-cols-2 mb-24 md:mb-32 gap-8">
+	{#each postsToDisplay as post, i}
+		<CardArticle
+			post={post}
+			showCategory={true}
+			categories={ post.categories}
+		></CardArticle>
 	{/each}
-</ul>
+</section>

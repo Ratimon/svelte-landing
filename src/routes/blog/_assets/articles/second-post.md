@@ -6,6 +6,7 @@ categories:
   - feature
   - tutorial
 published: true
+imgSrc: /blog/1-introduce/header.png
 ---
 
 ## Svelte

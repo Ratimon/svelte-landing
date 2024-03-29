@@ -1,8 +1,8 @@
 import { json } from '@sveltejs/kit'
-import type { Post } from '../Blog.model'
+import type { PostType } from '../Blog.model'
 
 async function getPosts() {
-	let posts: Post[] = []
+	let posts: PostType[] = []
 
 	const paths = import.meta.glob('/src/routes/blog/_assets/articles/*.md', { eager: true })
 
@@ -11,8 +11,8 @@ async function getPosts() {
 		const slug = path.split('/').at(-1)?.replace('.md', '')
 
 		if (file && typeof file === 'object' && 'metadata' in file && slug) {
-			const metadata = file.metadata as Omit<Post, 'slug'>
-			const post = { ...metadata, slug } satisfies Post
+			const metadata = file.metadata as Omit<PostType, 'slug'>
+			const post = { ...metadata, slug } satisfies PostType
 			post.published && posts.push(post)
 		}
 	}
