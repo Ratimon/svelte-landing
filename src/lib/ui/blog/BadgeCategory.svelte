@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { CategoryType } from '../../../routes/blog/Blog.model'
-    export let category: CategoryType;
+	import type { CategoryPresenter } from '../../../routes/blog/Blog.presenter'
+    export let category: CategoryPresenter;
     export let extraStyle: string;
 </script>
 

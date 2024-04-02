@@ -1,8 +1,8 @@
 <script lang="ts">
     
-  import type {  AuthorType, PostType } from '../../../routes/blog/Blog.model';
+  import type {  AuthorPresenter} from '../../../routes/blog/Blog.presenter';
 
-  export let author: AuthorType;
+  export let author: AuthorPresenter;
 
 </script>
 

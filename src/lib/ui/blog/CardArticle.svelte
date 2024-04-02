@@ -1,15 +1,17 @@
 <script lang="ts">
 
     // import {url} from '$lib/utils/path';
-    import type { AuthorSlug, AuthorType, PostType, CategoryType } from '../../../routes/blog/Blog.model';
+    import type { AuthorPresenter, CategoryPresenter, PostPresenter} from '../../../routes/blog/Blog.presenter';
 
     import Avatar from '$lib/ui/blog/Avatar.svelte';
     import BadgeCategory from '$lib/ui/blog/BadgeCategory.svelte';
   
-    export let post: PostType;
+
+    export let post: PostPresenter;
+    export let categories: CategoryPresenter[];
+    export let author: AuthorPresenter ;
+    
     export let showCategory: boolean = true;
-    export let categories: CategoryType[];
-    export let author: AuthorType ;
 
 </script>
 

@@ -1,7 +1,8 @@
 <script lang="ts">
     import '../../app.postcss';
 
-	import type { AuthorType, CategoryType, CategoriesSlug, PostType } from './Blog.model'
+	import type { CategoriesSlug } from './Blog.model'
+	import type { AuthorPresenter, CategoryPresenter } from './Blog.presenter'
 	import CardArticle from '$lib/ui/blog/CardArticle.svelte';
 
 	import {appName} from 'web-config';
@@ -13,7 +14,7 @@
 	};
 
 	// All the blog categories data display in the /blog/category/[categoryId].ts pages.
-	const categories: CategoryType[] = [
+	const categories: CategoryPresenter[] = [
 	{
 		// The slug to use in the URL, from the categorySlugs object above.
 		slug: categorySlugs.feature,
@@ -65,7 +66,7 @@
 		rati: "Rati",
 	};
 
-	const authors: AuthorType[] = [
+	const authors: AuthorPresenter[] = [
 	{
 		// The slug to use in the URL, from the authorSlugs object above.
 		slug: authorSlugs.rati,
@@ -101,12 +102,12 @@
 
 	export let data;
 
-	$: postsWithCategory = data.posts.map( post => {
-		const cachedCategories : CategoryType[] = post.categories.map( categoryString => {
+	$: poststoPresent = data.posts.map( post => {
+		const cachedCategories : CategoryPresenter[] = post.categories.map( categoryString => {
 			return categories.find((category) => category.slug === categoryString)!;
 		} );
 
-		const cachedAuthor : AuthorType = authors.find((author) => author.slug == post.author)!;
+		const cachedAuthor : AuthorPresenter = authors.find((author) => author.slug == post.author)!;
 
 		return {
             ...post,
@@ -115,7 +116,7 @@
         };
 	});
 
-	$: postsToDisplay = postsWithCategory.sort(
+	$: postsSortedByLatest = poststoPresent.sort(
         (a, b) =>
           new Date(b.date).valueOf() - new Date(a.date).valueOf()
       )
@@ -133,7 +134,7 @@
 
 
 <section class="grid lg:grid-cols-2 mb-24 md:mb-32 gap-8">
-	{#each postsToDisplay as post, i}
+	{#each postsSortedByLatest as post, i}
 		<CardArticle
 			post={post}
 			showCategory={true}
