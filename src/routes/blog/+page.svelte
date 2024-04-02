@@ -34,8 +34,12 @@
       .slice(0, 6);
 </script>
 
-<!-- todo  -->
 <!-- SEO -->
+<!-- <svelte:head>
+	<title>The {appName}</title>
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Blog" />
+</svelte:head> -->
 
 <section class="text-center max-w-xl mx-auto mt-12 mb-24 md:mb-32">
 	<h1 class="font-extrabold text-3xl lg:text-5xl tracking-tight mb-6">
@@ -57,3 +61,7 @@
 		></CardArticle>
 	{/each}
 </section>
+
+<p class="font-bold text-2xl lg:text-4xl tracking-tight text-center mb-8 md:mb-12">
+	Browse articles by category
+</p>

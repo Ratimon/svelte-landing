@@ -11,6 +11,7 @@
 
 </script>
 
+<!-- SEO -->
 <svelte:head>
 	<title>{appName}</title>
 	<meta name="title" content={appName} />
