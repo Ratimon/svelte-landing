@@ -1,7 +1,7 @@
 <script lang="ts">
     import '../../app.postcss';
 
-	import type { PostType, CategoryType, CategoriesSlug } from './Blog.model'
+	import type { AuthorType, CategoryType, CategoriesSlug, PostType } from './Blog.model'
 	import CardArticle from '$lib/ui/blog/CardArticle.svelte';
 
 	import {appName} from 'web-config';
@@ -38,15 +38,80 @@
 	},
 	];
 
+	// Social icons used in the author's bio.
+	const socialIcons: {
+	[key: string]: {
+		name: string;
+		iconName: string;
+	};
+	} = {
+	twitter: {
+		name: "Twitter",
+		iconName: "Twitter",
+	},
+	linkedin: {
+		name: "LinkedIn",
+		iconName: "LinkedIn",
+	},
+	github: {
+		name: "GitHub",
+		iconName: "LinkedIn",
+	},
+	};
+
+
+	// These slugs are used to generate pages in the /blog/author/[authorId].js. It's a way to show all articles from an author.
+	const authorSlugs: {[key: string]: string; } = {
+		rati: "Rati",
+	};
+
+	const authors: AuthorType[] = [
+	{
+		// The slug to use in the URL, from the authorSlugs object above.
+		slug: authorSlugs.rati,
+		// The name to display in the author's bio. Up to 60 characters.
+		name: "Rati Montreewat",
+		// The job to display in the author's bio. Up to 60 characters.
+		job: "Indie Hacker",
+		// The description of the author to display in the author's bio. Up to 160 characters.
+		description:
+		"Rati is a blockchain developer and an entrepreneur.",
+		// The avatar of the author to display in the author's bio and avatar badge. It's better to use a local image, but you can also use an external image (https://...)
+		avatarSrc: "/blog/authors/rati.png",
+		// A list of social links to display in the author's bio.
+		socials: [
+		{
+			name: socialIcons.twitter.name,
+			icon: socialIcons.twitter.iconName,
+			url: "https://twitter.com/RATi_MOn",
+		},
+		{
+			name: socialIcons.linkedin.name,
+			icon: socialIcons.linkedin.iconName,
+			url: "https://www.linkedin.com/in/rati-montreewat/",
+		},
+		{
+			name: socialIcons.github.name,
+			icon: socialIcons.github.iconName,
+			url: "https://github.com/Ratimon",
+		},
+		],
+	},
+	];
+
 	export let data;
 
-	$: postsWithCategory  = data.posts.map( post => {
+	$: postsWithCategory = data.posts.map( post => {
 		const cachedCategories : CategoryType[] = post.categories.map( categoryString => {
 			return categories.find((category) => category.slug === categoryString)!;
 		} );
+
+		const cachedAuthor : AuthorType = authors.find((author) => author.slug == post.author)!;
+
 		return {
             ...post,
             categories: cachedCategories,
+			author: cachedAuthor
         };
 	});
 
@@ -73,6 +138,7 @@
 			post={post}
 			showCategory={true}
 			categories={ post.categories}
+			author={ post.author}
 		></CardArticle>
 	{/each}
 </section>

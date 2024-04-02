@@ -1,13 +1,15 @@
 <script lang="ts">
 
     // import {url} from '$lib/utils/path';
-    import type { PostType, CategoryType } from '../../../routes/blog/Blog.model';
+    import type { AuthorSlug, AuthorType, PostType, CategoryType } from '../../../routes/blog/Blog.model';
 
+    import Avatar from '$lib/ui/blog/Avatar.svelte';
     import BadgeCategory from '$lib/ui/blog/BadgeCategory.svelte';
   
     export let post: PostType;
     export let showCategory: boolean = true;
     export let categories: CategoryType[];
+    export let author: AuthorType ;
 
 </script>
 
@@ -57,7 +59,7 @@
             <p >{post.description}</p>
   
             <div class="flex items-center gap-4 text-sm">
-              <!-- <Avatar article={article} /> -->
+              <Avatar author={author} />
   
               <span itemProp="datePublished">
                 {new Date(post.date).toLocaleDateString("en-US", {
@@ -73,4 +75,3 @@
 
 
 </article>
-

@@ -1,17 +1,28 @@
-<!-- <script lang="ts">
-	import type { ArticleType } from '../../../routes/blog/Blog.model'
+<script lang="ts">
+    
+  import type {  AuthorType, PostType } from '../../../routes/blog/Blog.model';
+
+  export let author: AuthorType;
 
 </script>
 
-<a
-    href={`/blog/category/${category.slug}`}
-    class={`badge badge-sm md:badge-md hover:badge-primary ${
-        extraStyle ? extraStyle : ""
-      }`}
-    title={`Posts in ${category.title}`}
-    rel="tag">
+{#if author.avatarSrc}
+  <a href={`/blog/author${`/blog/author/${author.slug}`}`}
+    class="link link-hover hover:link-primary"
+    title={`Posts by ${author.name}`}
+  >
+    <span itemProp="author">
+      <img
+        src={author.avatarSrc}
+        alt={`Avatar of ${author.name}`}
+        class="w-7 h-7 rounded-full object-cover object-center"
+        width={28}
+        height={28}
+      />
+    </span>
 
-    {category.titleShort}
+    <span class="group-hover:underline">{author.name}</span>
+  </a>
+{/if}
 
-</a>
-    
+

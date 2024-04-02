@@ -1,6 +1,7 @@
 import { json } from '@sveltejs/kit'
 import type { PostType } from '../Blog.model'
 
+
 async function getPosts() {
 	let posts: PostType[] = []
 
