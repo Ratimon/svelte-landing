@@ -6,13 +6,13 @@ categories:
   - feature
   - tutorial
 author:
-  - Rati
+  - 'Rati'
 published: true
 imgSrc: /blog/1-introduce/header.png
 imgAlt: Supabase and ShipFast logo combined
 ---
 
-## Markdown
+## Markdown 1
 
 Hey friends! 👋
 

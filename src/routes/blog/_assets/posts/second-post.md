@@ -6,12 +6,12 @@ categories:
   - feature
   - tutorial
 author:
-  - Rati
+  - 'Rati'
 published: true
 imgSrc: /blog/1-introduce/header.png
 imgAlt: Supabase and ShipFast logo combined
 ---
 
-## Svelte
+## Svelte 2
 
 Media inside the **static** folder is served from `/`.

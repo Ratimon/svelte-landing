@@ -6,7 +6,6 @@
     import Avatar from '$lib/ui/blog/Avatar.svelte';
     import BadgeCategory from '$lib/ui/blog/BadgeCategory.svelte';
   
-
     export let post: PostPresenter;
     export let categories: CategoryPresenter[];
     export let author: AuthorPresenter ;

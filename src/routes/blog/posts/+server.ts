@@ -5,7 +5,7 @@ import type { PostData } from '../Blog.model';
 async function getPosts() {
 	let posts: PostData[] = []
 
-	const paths = import.meta.glob('/src/routes/blog/_assets/articles/*.md', { eager: true })
+	const paths = import.meta.glob('/src/routes/blog/_assets/posts/*.md', { eager: true })
 
 	for (const path in paths) {
 		const file = paths[path]
