@@ -5,18 +5,14 @@
 
 	export let data
 
-    //to do add type PostData
-
     let authorToDisplay: AuthorPresenter;
 	$: authorToDisplay = authors.find((author) => author.slug == data.slug)!;
 
     let allPosts : PostPresenter[];
-	$: allPosts = data.content.map( post => {
-
+	$: allPosts = data.posts.map( post => {
 		const cachedCategories : CategoryPresenter[] = post.categories.map( categoryString => {
 			return categories.find((category) => category.slug === categoryString)!;
 		} );
-
 		const cachedAuthor : AuthorPresenter = authors.find((author) => author.slug == post.author)!;
 
 		return {

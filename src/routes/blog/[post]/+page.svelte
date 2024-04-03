@@ -1,15 +1,10 @@
 <script lang="ts">
-
 	import type { AuthorPresenter, CategoryPresenter, PostPresenter } from '../Blog.presenter'
-
     import Avatar from '$lib/ui/blog/Avatar.svelte';
     import BadgeCategory from '$lib/ui/blog/BadgeCategory.svelte';
-
 	import {categories, authors} from '../Blog.data'
 
 	export let data
-
-	//to do add type PostData
 
     let postToDisplay: PostPresenter;
 	$: postToDisplay = data.meta
