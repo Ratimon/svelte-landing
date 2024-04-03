@@ -10,8 +10,8 @@
 
 	export let data;
 
-	let poststoPresent : PostPresenter[];
-	$: poststoPresent = data.posts.map( post => {
+	let allPosts : PostPresenter[];
+	$: allPosts = data.posts.map( post => {
 
 		const cachedCategories : CategoryPresenter[] = post.categories.map( categoryString => {
 			return categories.find((category) => category.slug === categoryString)!;
@@ -27,7 +27,7 @@
 	});
 
 	let postsSortedByLatest : PostPresenter[];
-	$: postsSortedByLatest = poststoPresent.sort(
+	$: postsSortedByLatest = allPosts.sort(
         (a, b) =>
           new Date(b.date).valueOf() - new Date(a.date).valueOf()
       )

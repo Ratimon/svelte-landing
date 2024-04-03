@@ -1,5 +1,4 @@
 <script lang="ts">
-	// import { formatDate } from '$lib/utils'
 
 	import type { AuthorPresenter, CategoryPresenter, PostPresenter } from '../Blog.presenter'
 
@@ -10,6 +9,8 @@
 
 	export let data
 
+	//to do add type PostData
+
     let postToDisplay: PostPresenter;
 	$: postToDisplay = data.meta
 
@@ -19,9 +20,9 @@
 			return categories.find((category) => category.slug === categoryString)!;
 	} );
 
-
 	let authorToDisplay: AuthorPresenter;
 	$: authorToDisplay = authors.find((author) => author.slug == postToDisplay.author)!;
+
 </script>
 
 <!-- SEO -->

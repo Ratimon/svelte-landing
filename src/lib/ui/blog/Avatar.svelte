@@ -7,7 +7,7 @@
 </script>
 
 {#if author.avatarSrc}
-  <a href={`/blog/author${`/blog/author/${author.slug}`}`}
+  <a href={`/blog/author/${author.slug}`}
     class="link link-hover hover:link-primary"
     title={`Posts by ${author.name}`}
   >

@@ -50,7 +50,7 @@ export const categories: CategoryPresenter[] = [
 		},
 		github: {
 			name: "GitHub",
-			iconName: "LinkedIn",
+			iconName: "Github",
 		},
 		};
 		
