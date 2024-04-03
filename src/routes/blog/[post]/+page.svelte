@@ -4,19 +4,48 @@
     import BadgeCategory from '$lib/ui/blog/BadgeCategory.svelte';
 	import {categories, authors} from '../Blog.data'
 
-	export let data
+	export let data;
 
     let postToDisplay: PostPresenter;
-	$: postToDisplay = data.meta
+	$: postToDisplay = {
+		...data.meta,
+		categories: data.meta.categories.map( categoryString => {
+			return categories.find((category) => category.slug === categoryString)!;
+		}),
+		author: authors.find((author) => author.slug == data.meta.author)!
+	}
 
 	let categoriesToLabel : CategoryPresenter[];
+	$: categoriesToLabel = postToDisplay.categories;
 
-	$: categoriesToLabel = data.meta.categories.map( categoryString => {
+
+	let allPosts : PostPresenter[];
+	$: allPosts = data.posts.map( post => {
+		const cachedCategories : CategoryPresenter[] = post.categories.map( categoryString => {
 			return categories.find((category) => category.slug === categoryString)!;
-	} );
+		} );
+		const cachedAuthor : AuthorPresenter = authors.find((author) => author.slug == post.author)!;
 
-	let authorToDisplay: AuthorPresenter;
-	$: authorToDisplay = authors.find((author) => author.slug == postToDisplay.author)!;
+		return {
+            ...post,
+            categories: cachedCategories,
+			author: cachedAuthor
+        };
+	});
+
+	let postsRelated : PostPresenter[];
+	$: postsRelated = allPosts.filter(
+      (a) =>
+        a.slug !== data.slug &&
+        a.categories.some((c) =>
+			postToDisplay.categories.map((c) => c.slug).includes(c.slug)
+        )
+    )
+    .sort(
+      (a, b) =>
+        new Date(b.date).valueOf() - new Date(a.date).valueOf()
+    )
+    .slice(0, 3);
 
 </script>
 
@@ -89,20 +118,43 @@
 				<p class="text-base-content/80 text-sm mb-2 md:mb-3">
 					Posted by
 				</p>
-				<Avatar author={authorToDisplay} />
+				<Avatar post={postToDisplay} />
+
+				{#if postsRelated}
+					<div class="hidden md:block mt-12">
+						<p class=" text-base-content/80 text-sm  mb-2 md:mb-3">
+							Related reading
+						</p>
+						<div class="space-y-2 md:space-y-5">
+
+							{#each postsRelated as post, i}
+								<p class="mb-0.5">
+									<a 
+										href={`/blog/${post.slug}`}
+										class="link link-hover hover:link-primary font-medium"
+										title={post.title}
+										rel="bookmark"
+										>
+										{post.title}
+									</a>
+								</p>
+								<p class="text-base-content/80 max-w-full text-sm">
+									{post.description}
+								</p>
+							{/each}
+							
+						</div>
+					</div>
+				{/if}
 			</section>
 
 			<section class="w-full max-md:pt-4 md:pr-20 space-y-12 md:space-y-20">
 				<div class="prose">
 					<svelte:component this={data.content} />
 				</div>
-				
-			  </section>
+			</section>
 
 		</div>
-
 	</article>
-
-	<!-- todo related post -->
 
 </article>

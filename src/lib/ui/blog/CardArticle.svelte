@@ -1,14 +1,11 @@
 <script lang="ts">
-
-    // import {url} from '$lib/utils/path';
-    import type { AuthorPresenter, CategoryPresenter, PostPresenter} from '../../../routes/blog/Blog.presenter';
+    import type { CategoryPresenter, PostPresenter} from '../../../routes/blog/Blog.presenter';
 
     import Avatar from '$lib/ui/blog/Avatar.svelte';
     import BadgeCategory from '$lib/ui/blog/BadgeCategory.svelte';
   
     export let post: PostPresenter;
     export let categories: CategoryPresenter[];
-    export let author: AuthorPresenter ;
     
     export let showCategory: boolean = true;
 
@@ -60,7 +57,7 @@
             <p >{post.description}</p>
   
             <div class="flex items-center gap-4 text-sm">
-              <Avatar author={author} />
+              <Avatar post={post} />
   
               <span itemProp="datePublished">
                 {new Date(post.date).toLocaleDateString("en-US", {

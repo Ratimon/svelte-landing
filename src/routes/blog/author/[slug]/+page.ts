@@ -1,9 +1,8 @@
-import { error } from '@sveltejs/kit'
 import type { PostData } from '../../Blog.model';
+import { error } from '@sveltejs/kit'
 
 export async function load({ fetch, params }) {
 	try {
-
         const response = await fetch('/blog/posts')
         const posts: PostData[] = await response.json()
 
