@@ -1,13 +1,11 @@
 import type { PostData } from '../Blog.model';
 import { error } from '@sveltejs/kit'
 
-export async function load({ params }) {
+export async function load({ params, fetch }) {
 	try {
 		const post = await import(`../_assets/posts/${params.post}.md`)
-        const response = await fetch('/blog/posts')
+        const response = await fetch('/blog/api/posts')
         const posts: PostData[] = await response.json()
-
-        console.log('post.metadata', post.metadata )
 
 		return {
 			content: post.default,

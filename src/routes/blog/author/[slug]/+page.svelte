@@ -3,6 +3,7 @@
 	import { authors, categories} from '../../Blog.data'
     import CardArticle from '$lib/ui/blog/CardArticle.svelte';
 
+    //todo refactor to store
 	export let data
 
     let authorToDisplay: AuthorPresenter;
@@ -91,7 +92,6 @@
                 post={post}
                 showCategory={true}
                 categories={ post.categories}
-                author={ post.author}
             ></CardArticle>
         {/each}
     </div>

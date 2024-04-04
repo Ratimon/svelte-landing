@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit'
-import type { PostData } from '../Blog.model';
+import type { PostData } from '../../Blog.model';
 
 
 async function getPosts() {

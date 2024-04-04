@@ -4,6 +4,7 @@
     import BadgeCategory from '$lib/ui/blog/BadgeCategory.svelte';
 	import {categories, authors} from '../Blog.data'
 
+	//refactor to store
 	export let data;
 
     let postToDisplay: PostPresenter;

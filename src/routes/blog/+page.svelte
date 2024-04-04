@@ -57,7 +57,6 @@
 			post={post}
 			showCategory={true}
 			categories={ post.categories}
-			author={ post.author}
 		></CardArticle>
 	{/each}
 </section>
