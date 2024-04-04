@@ -1,12 +1,10 @@
 <script lang="ts">
     import '../../app.postcss';
-
 	import type { AuthorPresenter, CategoryPresenter, PostPresenter } from './Blog.presenter'
 	import {categories, authors} from './Blog.data'
 	import CardArticle from '$lib/ui/blog/CardArticle.svelte';
-
+	import CardCategory from '$lib/ui/blog/CardCategory.svelte';
 	import {appName} from 'web-config';
-
 
 	export let data;
 
@@ -61,6 +59,16 @@
 	{/each}
 </section>
 
-<p class="font-bold text-2xl lg:text-4xl tracking-tight text-center mb-8 md:mb-12">
-	Browse articles by category
-</p>
+<section>
+	<p class="font-bold text-2xl lg:text-4xl tracking-tight text-center mb-8 md:mb-12">
+		Browse articles by category
+	</p>
+
+	<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+		{#each categories as category, i}
+			<CardCategory
+				category={ category}
+			></CardCategory>
+		{/each}
+	</div>
+</section>

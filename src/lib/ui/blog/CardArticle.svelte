@@ -1,6 +1,5 @@
 <script lang="ts">
     import type { CategoryPresenter, PostPresenter} from '../../../routes/blog/Blog.presenter';
-
     import Avatar from '$lib/ui/blog/Avatar.svelte';
     import BadgeCategory from '$lib/ui/blog/BadgeCategory.svelte';
   
