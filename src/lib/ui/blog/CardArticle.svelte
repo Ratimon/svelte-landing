@@ -4,7 +4,8 @@
     import BadgeCategory from '$lib/ui/blog/BadgeCategory.svelte';
   
     export let post: PostPresenter;
-    export let categories: CategoryPresenter[];
+    let categories: CategoryPresenter[];
+    $: categories = post.categories;
     
     export let showCategory: boolean = true;
 

@@ -9,9 +9,10 @@
     import {url} from '$lib/utils/path';
   
     let className = 'bg-base-200';
-      export {className as class};
+    export {className as class};
   
-    export let links : {pathname: string; title: string}[];
+    export let headLinks : {pathname: string; title: string}[];
+    export let categoryLinks : {pathname: string; title: string}[];
   
     let isOpen: boolean = false;
     const setIsOpen = (open : boolean) :void => {
@@ -42,7 +43,7 @@
 
         <div class="hidden lg:flex lg:justify-center lg:gap-12 lg:items-center" >
             <NavTabs
-              pages={links}
+              pages={headLinks}
               class="link link-hover text-base-content/80 hover:text-base-content active:text-base-content focus:text-base-content duration-100"
               tabClass="tab tab-sm tab-lifted flex-1"
               whenSelected="tab-active font-black !bg-base-100"
@@ -53,7 +54,7 @@
             <Popover class="relative z-30" >
                 <PopoverButton
                     class="link no-underline flex flex-nowrap items-center gap-1 text-base-content/80 hover:text-base-content active:text-base-content focus:text-base-content duration-100"
-                    title="Open Blog categories"
+                    title="Open Blog Categories"
                     >
                     Categories
                     <svg
@@ -68,13 +69,19 @@
                   </svg>
                 </PopoverButton>
 
+                <!-- todo -->
                 <!-- <Transition></Transition> -->
               
                 <PopoverPanel class="absolute left-0 z-30 mt-3 w-screen max-w-full sm:max-w-sm transform">
                     <div class="overflow-hidden rounded-box shadow-lg ring-1 ring-base-content ring-opacity-5">
                         <div class="relative grid gap-2 bg-base-100 p-2 overflow-hidden">
-                            <a class="block text-left p-3 -m-1 cursor-pointer hover:bg-base-200 rounded-box duration-200" href="/features">Features</a>
-                            <a class="block text-left p-3 -m-1 cursor-pointer hover:bg-base-200 rounded-box duration-200" href="/tutorials">Tutorials</a>
+
+                            <NavTabs
+                                pages={categoryLinks}
+                                class=""
+                                tabClass="block text-left p-3 -m-1 cursor-pointer hover:bg-base-200 rounded-box duration-200"
+                            />
+
                         </div>
                     </div>
               
@@ -132,13 +139,13 @@
                 <div class="flow-root mt-6">
                     <div class="py-4">
                         <NavTabs
-                            pages={links}
+                            pages={headLinks}
                             class="flex flex-col gap-y-4 items-start"
 
                             tabClass="tab tab-sm tab-lifted flex-1"
                             whenSelected="tab-active font-black !bg-base-100"
                         />
-                        <!-- to do : inside -->
+                        <!-- to do : categories -->
                         <!-- <ButtonAccordionCategories /> -->
                     </div>
                     <div class="divider"></div>

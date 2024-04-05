@@ -9,6 +9,11 @@
     {pathname: '/blog', title: 'All Posts'},
   ];
 
+  const categoryLinks = [
+    {pathname: '/blog/category/feature', title: 'Feature'},
+	{pathname: '/blog/category/tutorial', title: 'Tutorial'},
+  ];
+
 </script>
 
 <!-- SEO -->
@@ -41,7 +46,7 @@
 	<meta name="apple-mobile-web-app-title" content={appName} />
 </svelte:head>
 
-<HeaderBlog links={headLinks} class="bg-base-200 "></HeaderBlog>
+<HeaderBlog headLinks={headLinks} categoryLinks={categoryLinks} class="bg-base-200 "></HeaderBlog>
 
 <div class="min-h-screen flex flex-col">
   <slot />

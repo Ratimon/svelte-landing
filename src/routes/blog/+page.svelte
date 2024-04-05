@@ -54,7 +54,6 @@
 		<CardArticle
 			post={post}
 			showCategory={true}
-			categories={ post.categories}
 		></CardArticle>
 	{/each}
 </section>

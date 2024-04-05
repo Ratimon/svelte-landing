@@ -9,7 +9,7 @@ author:
   - 'Rati'
 published: true
 imgSrc: /blog/1-introduce/header.png
-imgAlt: Supabase and ShipFast logo combined
+imgAlt: Supabase and Landing logo combined
 ---
 
 ## Svelte 2

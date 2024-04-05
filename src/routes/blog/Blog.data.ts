@@ -18,18 +18,18 @@ export const categories: CategoryPresenter[] = [
 		titleShort: "Features",
 		// The description of the category to display in the category page. Up to 160 characters.
 		description:
-		"Here are the latest features we've added to ShipFast. I'm constantly improving our product to help you ship faster.",
+		"Here are the latest features we've added to Landing. I'm constantly improving our product to help you ship faster.",
 		// A short version of the description above, only displayed in the <Header /> on mobile. Up to 60 characters.
-		descriptionShort: "Latest features added to ShipFast.",
+		descriptionShort: "Latest features added to Landing.",
 	},
 	{
 		slug: categorySlugs.tutorial,
 		title: "How Tos & Tutorials",
 		titleShort: "Tutorials",
 		description:
-		"Learn how to use ShipFast with these step-by-step tutorials. I'll show you how to ship faster and save time.",
+		"Learn how to use Landing with these step-by-step tutorials. I'll show you how to ship faster and save time.",
 		descriptionShort:
-		"Learn how to use ShipFast with these step-by-step tutorials.",
+		"Learn how to use Landing with these step-by-step tutorials.",
 	},
 	];
 

@@ -3,13 +3,12 @@ title: First post
 description: First post Description.
 date: '2023-4-14'
 categories:
-  - feature
   - tutorial
 author:
   - 'Rati'
 published: true
 imgSrc: /blog/1-introduce/header.png
-imgAlt: Supabase and ShipFast logo combined
+imgAlt: Supabase and Landing logo combined
 ---
 
 ## Markdown 1
