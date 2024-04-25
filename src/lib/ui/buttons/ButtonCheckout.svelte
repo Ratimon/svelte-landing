@@ -11,7 +11,6 @@
         isLoading = load;
     }
 
-  
     const handlePayment = async () => {
     setIsLoading(true);
 
@@ -36,9 +35,9 @@
     setIsLoading(false);
   };
   
-  </script>
+</script>
   
-  <button
+<button
     class="btn btn-primary btn-block group"
     on:click={() => handlePayment()}
     >
