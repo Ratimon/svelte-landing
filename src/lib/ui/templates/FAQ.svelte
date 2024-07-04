@@ -21,7 +21,6 @@
 
         {#each faqList as item, i}
             <FaqItem>
-
                 <svelte:fragment slot="question">
                     <p>{item.question}</p>
                 </svelte:fragment>
@@ -30,8 +29,7 @@
                     <div class="space-y-2 leading-relaxed">{item.answer}</div>
                 </svelte:fragment>
             </FaqItem>
-        
-	    {/each}
+	      {/each}
       </ul>
     </div>
 </section>

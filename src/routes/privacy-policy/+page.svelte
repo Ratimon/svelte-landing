@@ -1,7 +1,7 @@
 <script lang="ts">
     import {appName} from 'web-config';
-     // seo tags
-  
+    // seo tags
+
 </script>
 
 <main class="max-w-xl mx-auto">

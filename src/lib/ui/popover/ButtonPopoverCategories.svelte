@@ -7,8 +7,6 @@
 
 </script>
   
-
-
 <Popover class="relative z-30" >
     <PopoverButton
         class="link no-underline flex flex-nowrap items-center gap-1 text-base-content/80 hover:text-base-content active:text-base-content focus:text-base-content duration-100"

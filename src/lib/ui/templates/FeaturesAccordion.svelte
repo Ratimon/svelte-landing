@@ -1,9 +1,9 @@
 <script lang="ts">
 
-  import type {Feature} from './Feature.Model';
+  import type {Feature} from '../../../routes/Feature.Model';
   import {onMount, onDestroy} from 'svelte';
   import { Accordion, AccordionItem, AccordionMedia } from '$lib/ui/accordions'
-  import { featuresStore, featureSelectedStore } from './Feature.Store'
+  import { featuresStore, featureSelectedStore } from '../../../routes/Feature.Store'
 
   export let features = [] as Feature[];
 

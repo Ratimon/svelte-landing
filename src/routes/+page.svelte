@@ -3,14 +3,14 @@
   import type {Plan } from './Pricing.Model';
   import type {FAQItemProps} from '$lib/ui/faq/types.ts';
 
-  import Header from './Header.svelte';
-  import Hero from '$lib/ui/hero/Hero.svelte';
-  import Problem from '$lib/ui/problem/Problem.svelte';
-  import FeaturesAccordion from './FeaturesAccordion.svelte';
-  import Pricing from './Pricing.svelte';
-  import FAQ from '$lib/ui/faq/FAQ.svelte';
-  import CTA from './CTA.svelte';
-  import Footer from './Footer.svelte';
+  import Header from '../lib/ui/templates/Header.svelte';
+  import Hero from '$lib/ui/templates/Hero.svelte';
+  import Problem from '$lib/ui/templates/Problem.svelte';
+  import FeaturesAccordion from '../lib/ui/templates/FeaturesAccordion.svelte';
+  import Pricing from '../lib/ui/templates/Pricing.svelte';
+  import FAQ from '$lib/ui/templates/FAQ.svelte';
+  import CTA from '../lib/ui/templates/CTA.svelte';
+  import Footer from '../lib/ui/templates/Footer.svelte';
 
   const headLinks = [
       {pathname: '#pricing', title: 'Pricing'},

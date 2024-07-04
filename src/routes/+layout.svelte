@@ -2,6 +2,7 @@
 	import '../app.postcss';
 	import {url} from '$lib/utils/path';
 	import {appName, appDescription, themeColor, appleStatusBarStyle} from 'web-config';
+	// to do : add plausible
 
 </script>
 

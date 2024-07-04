@@ -1,6 +1,6 @@
 <script  lang="ts">
 
-    import type {FeaturePlaned, Plan } from './Pricing.Model';
+    import type {FeaturePlaned, Plan } from '../../../routes/Pricing.Model';
     import ButtonCheckout from '$lib/ui/buttons/ButtonCheckout.svelte';
 
     export let keyToNav: string = '';
