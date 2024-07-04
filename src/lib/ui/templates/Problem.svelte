@@ -1,9 +1,11 @@
 <script lang="ts">
     import Arrow from "$lib/ui/problem/Arrow.svelte";
+    import Background from '$lib/ui/background/Background.svelte';
     import Step from "$lib/ui/problem/Step.svelte";
 </script>
-  
-<section class="bg-neutral text-neutral-content">
+
+<Background color="bg-neutral">
+  <section class="text-neutral-content">
     <div class="max-w-7xl mx-auto px-8 py-16 md:py-32 text-center">
       <h2 class="max-w-3xl mx-auto font-extrabold text-4xl md:text-5xl tracking-tight mb-6 md:mb-8">
         80% of startups fail because the product has never been launched
@@ -25,4 +27,5 @@
         <Step emoji="😔" text="Quit project" />
       </div>
     </div>
-</section>
+  </section>
+</Background>

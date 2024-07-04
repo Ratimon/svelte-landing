@@ -1,7 +1,7 @@
 <script lang="ts">
   import "../../app.postcss";
   import {url} from '$lib/utils/path';
-	import {appName, appDescription, themeColor, appleStatusBarStyle} from 'web-config';
+  import {appName, appDescription, themeColor, appleStatusBarStyle} from 'web-config';
 
   import HeaderBlog from '$lib/ui/blog/HeaderBlog.svelte';
 
@@ -45,6 +45,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content={appleStatusBarStyle} />
 	<meta name="apple-mobile-web-app-title" content={appName} />
 </svelte:head>
+
 
 <HeaderBlog headLinks={headLinks} categoryLinks={categoryLinks} class="bg-base-200 "></HeaderBlog>
 

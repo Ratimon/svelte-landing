@@ -1,5 +1,7 @@
 <script lang="ts">
 	import {appName} from 'web-config';
+  import Background from '$lib/ui/background/Background.svelte';
+
 </script>
 
 <section class=" relative hero overflow-hidden max-h-full"  >
@@ -10,7 +12,13 @@
       class="object-fill w-full"
     />
 
-    <div class="relative hero-overlay bg-neutral bg-opacity-70"></div>
+    <Background color={`bg-neutral`}>
+      <div class="relative hero-overlay bg-opacity-70">
+      
+      </div>
+    </Background>
+
+
     <div class="relative hero-content text-center text-neutral-content p-8">
       <div class="flex flex-col items-center max-w-xl p-8 md:p-0">
         <h2 class="font-bold text-3xl md:text-5xl tracking-tight mb-8 md:mb-12">

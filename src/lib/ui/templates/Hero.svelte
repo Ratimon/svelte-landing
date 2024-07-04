@@ -1,9 +1,11 @@
 <script lang="ts">
-    import TestimonialsAvatars from "$lib/ui/testinomials/TestimonialsAvatars.svelte";
-    import {appName} from 'web-config';
+  import {appName} from 'web-config';
+  import Background from '$lib/ui/background/Background.svelte';
+  import TestimonialsAvatars from "$lib/ui/testinomials/TestimonialsAvatars.svelte";
 </script>
-  
-  <section class="max-w-7xl mx-auto bg-base-100 flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-20 px-8 py-8 lg:py-20">
+
+<Background color="bg-base-100">
+  <section class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-20 px-8 py-8 lg:py-20">
     <div class="flex flex-col gap-10 lg:gap-14 items-center justify-center text-center lg:text-left lg:items-start">
       <a
         href="https://www.producthunt.com/posts/shipfast-2?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-shipfast&#0045;2"
@@ -33,7 +35,6 @@
       <TestimonialsAvatars />
     </div>
     <div class="lg:w-full">
-
       <img
         class="w-full"
         alt="Product Demo"
@@ -41,6 +42,6 @@
         width={500}
         height={500}
         />
-
     </div>
   </section>
+</Background>

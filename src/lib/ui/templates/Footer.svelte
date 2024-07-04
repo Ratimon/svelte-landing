@@ -2,6 +2,8 @@
 	import {appName, appDescription} from 'web-config';
   import {supportEmail} from 'mailgun-config';
 
+  import Background from '$lib/ui/background/Background.svelte';
+
   import {url} from '$lib/utils/path';
 
   import ScrollLink from '$lib/ui/header/ScrollLink.svelte';
@@ -11,8 +13,8 @@
 
 </script>
 
-
-<footer class="bg-base-200 border-t border-base-content/10">
+<Background color="bg-base-200">
+  <footer class="border-t border-base-content/10">
     <div class="max-w-7xl mx-auto px-8 py-24">
       <div class=" flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
@@ -94,4 +96,5 @@
         </div>
       </div>
     </div>
-</footer>
+  </footer>
+</Background>

@@ -1,8 +1,10 @@
 <script lang="ts">
   import Icon from '@iconify/svelte';
-  
-  import NavScrolls from '$lib/ui/header/NavScrolls.svelte';
+
+  import Background from '$lib/ui/background/Background.svelte';
   import ButtonGradient from '$lib/ui/buttons/ButtonGradient.svelte';
+
+  import NavScrolls from '$lib/ui/header/NavScrolls.svelte';
 
   import {appName} from 'web-config';
   import {url} from '$lib/utils/path';
@@ -19,7 +21,8 @@
 
 </script>
 
-<header class={className}>
+<Background color={className}>
+  <header >
     <nav class="container flex items-center justify-between px-8 py-4 mx-2"
       aria-label="Global" >
       <div class="flex lg:flex-1">
@@ -67,8 +70,9 @@
   
       <!-- Mobile menu, show/hide based on menu state. -->
       <div class={`relative z-50 ${isOpen ? "" : "hidden"}`}>
-        <div
-          class={`fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-base-200 sm:max-w-sm sm:ring-1 sm:ring-neutral/10 transform origin-right transition ease-in-out duration-300`}
+        <Background color={className}>
+          <div
+          class={`fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto sm:max-w-sm sm:ring-1 sm:ring-neutral/10 transform origin-right transition ease-in-out duration-300`}
         >
           <!-- logo/name on small screens -->
           <div class="flex items-center justify-between">
@@ -111,6 +115,8 @@
           </div>
   
         </div>
+        </Background>
       </div>
     </nav>
-</header>
+  </header>
+</Background>

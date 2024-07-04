@@ -1,14 +1,16 @@
 <script lang="ts">
+	import Background from '$lib/ui/background/Background.svelte';
 
-    import type {FAQItemProps} from '$lib/ui/faq/types.ts';
-    import FaqItem from '$lib/ui/faq/FaqItem.svelte';
+  import type {FAQItemProps} from '$lib/ui/faq/types.ts';
+  import FaqItem from '$lib/ui/faq/FaqItem.svelte';
 
-    export let keyToNav: string = '';
-    export let faqList = [] as FAQItemProps[];
+  export let keyToNav: string = '';
+  export let faqList = [] as FAQItemProps[];
   
 </script>
 
-<section class="bg-base-200" id={keyToNav}>
+<Background color="bg-base-200">
+  <section id={keyToNav}>
     <div class="py-24 px-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
       <div class="flex flex-col text-left basis-1/2">
         <p class="inline-block font-semibold text-primary mb-4">FAQ</p>
@@ -32,4 +34,5 @@
 	      {/each}
       </ul>
     </div>
-</section>
+  </section>
+</Background>
