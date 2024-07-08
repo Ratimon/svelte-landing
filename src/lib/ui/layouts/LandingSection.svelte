@@ -7,7 +7,6 @@
 
 </script>
 
-
 <div class={`mx-auto max-w-screen-xl px-3 sm:px-5 lg:px-6 ${yPadding ? yPadding : 'py-16'}`}>
 
     {#if title || subtitle || description}
