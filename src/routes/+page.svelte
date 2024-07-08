@@ -6,7 +6,8 @@
   import Header from '../lib/ui/templates/Header.svelte';
   import Hero from '$lib/ui/templates/Hero.svelte';
   import Problem from '$lib/ui/templates/Problem.svelte';
-  import FeaturesAccordion from '../lib/ui/templates/FeaturesAccordion.svelte';
+  // import FeaturesAccordion from '$lib/ui/templates/FeaturesAccordion.svelte';
+  import FeaturesListicle from '$lib/ui/templates/FeaturesListicle.svelte';
   import Pricing from '../lib/ui/templates/Pricing.svelte';
   import FAQ from '$lib/ui/templates/FAQ.svelte';
   import CTA from '../lib/ui/templates/CTA.svelte';
@@ -21,7 +22,6 @@
       {pathname: '#pricing', title: 'Pricing'},
       {pathname: '/blog', title: 'Blog'},
   	];
-
 
   // // in case you want to use the multiple pages app 
   // const links = [
@@ -63,6 +63,44 @@
         iconName: "mdi:art",
     },
     ] as Feature[];
+
+    interface FeatureList {
+        title: string;
+        descriptions: string[];
+        highlight: string;
+        iconName?: string;
+    }
+
+    const featureLists = [
+    {
+        title: "Emails",
+        descriptions:
+        [
+            "Send transactional emails",
+            "DNS setup to avoid spam folder (DKIM, DMARC, SPF in subdomain)",
+            "Webhook to receive & forward emails",
+          ],
+        highlight : "Time saved: 3 hours",
+        iconName: "ic:twotone-alternate-email",
+    },
+    {
+        title: "Payments",
+        descriptions:
+        [
+            "Create checkout sessions",
+            "Handle webhooks to update user's account",
+            "Tips to setup your account & reduce chargebacks",
+          ],
+        highlight : "Time saved: 3 hours",
+        iconName: "fxemoji:creditcard",
+    },
+    {
+        title: "Database",
+        descriptions: ["Mongoose schema", "Mongoose plugins to make your life easier"],
+        highlight : "Time saved: 3 hours",
+        iconName: "material-symbols:person-outline",
+    },
+    ] as FeatureList[];
 
     const plans = [
       {
@@ -133,7 +171,8 @@
 <Header links={headLinks} class="bg-base-200 "></Header>
 <Hero></Hero>
 <Problem></Problem>
-<FeaturesAccordion {features} ></FeaturesAccordion>
+<FeaturesListicle {featureLists} featureSelected={featureLists[0].title}></FeaturesListicle>
+<!-- <FeaturesAccordion {features} ></FeaturesAccordion> -->
 <Pricing {plans} keyToNav={headLinks[0].pathname}></Pricing>
 <FAQ {faqList} keyToNav={headLinks[1].pathname}></FAQ>
 <CTA></CTA>

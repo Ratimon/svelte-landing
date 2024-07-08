@@ -31,7 +31,6 @@
       <button class="btn btn-primary btn-wide">
         Get {appName}
       </button>
-
       <TestimonialsAvatars />
     </div>
     <div class="lg:w-full">
