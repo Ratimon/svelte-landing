@@ -10,7 +10,7 @@
     let postToDisplay: PostPresenter;
 	$: postToDisplay = {
 		...data.meta,
-		categories: data.meta.categories.map( categoryString => {
+		categories: data.meta.categories.map( (categoryString: string) => {
 			return categories.find((category) => category.slug === categoryString)!;
 		}),
 		author: authors.find((author) => author.slug == data.meta.author)!

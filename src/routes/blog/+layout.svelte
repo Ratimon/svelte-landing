@@ -1,21 +1,24 @@
 <script lang="ts">
   import "../../app.postcss";
+  import type {Link } from '$lib/model/Link';
+
   import {url} from '$lib/utils/path';
   import {appName, appDescription, themeColor, appleStatusBarStyle} from 'web-config';
 
   import HeaderBlog from '$lib/ui/blog/HeaderBlog.svelte';
 
-  const headLinks = [
-    {pathname: '/blog', title: 'All Posts'},
+  const headLinks : Link[] = [
+    {pathname: '/blog', title: 'All Posts',navType: 'tab'}
   ];
 
-  const categoryLinks = [
-    {pathname: '/blog/category/feature', title: 'Feature'},
-	{pathname: '/blog/category/tutorial', title: 'Tutorial'},
+  const categoryLinks : Link[] = [
+    {pathname: '/blog/category/feature', title: 'Feature', navType: 'tab'},
+	{pathname: '/blog/category/tutorial', title: 'Tutorial', navType: 'tab'},
   ];
 
 </script>
 
+<!-- to do : remove as redundant to layout -->
 <!-- SEO -->
 <svelte:head>
 	<title>{appName}</title>

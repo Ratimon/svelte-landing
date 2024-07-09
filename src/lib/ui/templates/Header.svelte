@@ -1,7 +1,6 @@
 <script lang="ts">
   import type {Link } from '$lib/model/Link';
   
-
   import Icon from '@iconify/svelte';
   import Background from '$lib/ui/background/Background.svelte';
   import ButtonGradient from '$lib/ui/buttons/ButtonGradient.svelte';
