@@ -1,10 +1,11 @@
 <script lang="ts">
-  import Icon from '@iconify/svelte';
+  import type {Link } from '$lib/model/Link';
+  
 
+  import Icon from '@iconify/svelte';
   import Background from '$lib/ui/background/Background.svelte';
   import ButtonGradient from '$lib/ui/buttons/ButtonGradient.svelte';
-
-  import NavScrolls from '$lib/ui/header/NavScrolls.svelte';
+  import Nav from '$lib/ui/header/Nav.svelte';
 
   import {appName} from 'web-config';
   import {url} from '$lib/utils/path';
@@ -12,7 +13,7 @@
   let className = 'bg-base-200';
 	export {className as class};
 
-  export let links : {pathname: string; title: string}[];
+  export let links : Link[];
 
   let isOpen: boolean = false;
   const setIsOpen = (open : boolean) :void => {
@@ -43,7 +44,7 @@
       </div>
   
       <div class="hidden lg:flex lg:justify-center lg:gap-12 lg:items-center" >
-        <NavScrolls
+        <Nav
           pages={links}
           class="link link-hover"
           tabClass="tab tab-sm tab-lifted flex-1"
@@ -99,7 +100,7 @@
           <!-- links on small screens -->
           <div class="flow-root mt-6">
             <div class="py-4">
-              <NavScrolls
+              <Nav
                 pages={links}
                 class="flex flex-col gap-y-4 items-start"
         

@@ -1,7 +1,9 @@
 <script  lang="ts">
   import type {Feature} from './Feature.Model';
   import type {Plan } from './Pricing.Model';
-  import type {FAQItemProps} from '$lib/ui/faq/types.ts';
+  import type {FAQItemProps} from '$lib/model/FAQ.ts';
+  import type {Link } from '$lib/model/Link';
+  import type {FeatureListElement } from '$lib/model/Feature';
 
   import Header from '../lib/ui/templates/Header.svelte';
   import Hero from '$lib/ui/templates/Hero.svelte';
@@ -13,14 +15,14 @@
   import CTA from '../lib/ui/templates/CTA.svelte';
   import Footer from '../lib/ui/templates/Footer.svelte';
 
-  const headLinks = [
-      {pathname: '#pricing', title: 'Pricing'},
-      {pathname: '#faq', title: 'FAQ'},
+  const headLinks : Link[] = [
+      {pathname: '#pricing', title: 'Pricing', navType: 'scroll'},
+      {pathname: '#faq', title: 'FAQ', navType : 'scroll'},
   	];
 
-  const footLinks = [
-      {pathname: '#pricing', title: 'Pricing'},
-      {pathname: '/blog', title: 'Blog'},
+  const footLinks : Link[] = [
+      {pathname: '#pricing', title: 'Pricing', navType: 'scroll'},
+      {pathname: '/blog', title: 'Blog', navType: 'tab'},
   	];
 
   // // in case you want to use the multiple pages app 
@@ -64,14 +66,7 @@
     },
     ] as Feature[];
 
-    interface FeatureList {
-        title: string;
-        descriptions: string[];
-        highlight: string;
-        iconName?: string;
-    }
-
-    const featureLists = [
+    const featureLists :FeatureListElement[] = [
     {
         title: "Emails",
         descriptions:
@@ -100,7 +95,7 @@
         highlight : "Time saved: 3 hours",
         iconName: "material-symbols:person-outline",
     },
-    ] as FeatureList[];
+    ] as FeatureListElement[];
 
     const plans = [
       {

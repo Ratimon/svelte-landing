@@ -1,4 +1,6 @@
 <script lang="ts">
+  import type {Link } from '$lib/model/Link';
+
 	import {appName, appDescription} from 'web-config';
   import {supportEmail} from 'mailgun-config';
 
@@ -9,7 +11,7 @@
   import ScrollLink from '$lib/ui/header/ScrollLink.svelte';
   import PageLink from '$lib/ui/header/PageLink.svelte';
 
-  export let links : {pathname: string; title: string}[];
+  export let links : Link[];
 
 </script>
 
@@ -61,20 +63,17 @@
                 </PageLink>
               {/if}
 
-              <ScrollLink
-                class="link link-hover"
-                whenUnselected="tab tab-sm tab-lifted flex-1"
-                whenSelected="tab-active font-black !bg-base-100"
-                href={links[0].pathname}>
-                {links[0].title}
-              </ScrollLink>
-              <PageLink
-                class="link link-hover"
-                whenUnselected="tab tab-sm tab-lifted flex-1"
-                whenSelected="tab-active font-black !bg-base-100"
-                href={links[1].pathname}>
-                {links[1].title}
-              </PageLink>
+              {#each links as link}
+                {#if link.navType == 'scroll'}
+                    <svelte:component this={ScrollLink} class="link link-hover" whenUnselected="tab tab-sm tab-lifted flex-1" whenSelected="tab-active font-black !bg-base-100" href={link.pathname}>
+                        {link.title}
+                    </svelte:component>
+                {:else}
+                    <svelte:component this={PageLink} class="link link-hover" whenUnselected="tab tab-sm tab-lifted flex-1" whenSelected="tab-active font-black !bg-base-100" href={link.pathname}>
+                        {link.title}
+                    </svelte:component>
+                {/if}
+              {/each}
 
             </div>
           </div>

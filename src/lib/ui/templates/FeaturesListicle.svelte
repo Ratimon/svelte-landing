@@ -1,14 +1,9 @@
 <script lang="ts">
+    import type {FeatureListElement } from '$lib/model/Feature';
+
     import Icon from '@iconify/svelte';
 
-    interface FeatureList {
-        title: string;
-        descriptions: string[];
-        highlight: string;
-        iconName?: string;
-    }
-  
-    export let featureLists = [] as FeatureList[];
+    export let featureLists = [] as FeatureListElement[];
     export let featureSelected: string = '';
 
     $: featureToDisplay = featureLists.find((feature) => feature.title === featureSelected);

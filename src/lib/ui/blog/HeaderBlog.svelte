@@ -1,21 +1,20 @@
 <script lang="ts">
-    import Icon from '@iconify/svelte';
-    
-    import Background from '$lib/ui/background/Background.svelte';
+    import type {Link } from '$lib/model/Link';
 
+    import Icon from '@iconify/svelte';
+    import Background from '$lib/ui/background/Background.svelte';
     import ButtonGradient from '$lib/ui/buttons/ButtonGradient.svelte';
     import ButtonPopoverCategories from  '$lib/ui/popover/ButtonPopoverCategories.svelte';
+    import Nav from '$lib/ui/header/Nav.svelte';
 
-    import NavTabs from '$lib/ui/header/NavTabs.svelte';
-  
     import {appName} from 'web-config';
     import {url} from '$lib/utils/path';
   
     let className = 'bg-base-200';
     export {className as class};
   
-    export let headLinks : {pathname: string; title: string}[];
-    export let categoryLinks : {pathname: string; title: string}[];
+    export let headLinks : Link[];
+    export let categoryLinks : Link[];
   
     let isOpen: boolean = false;
     const setIsOpen = (open : boolean) :void => {
@@ -46,7 +45,7 @@
             </div>
     
             <div class="hidden lg:flex lg:justify-center lg:gap-12 lg:items-center" >
-                <NavTabs
+                <Nav
                   pages={headLinks}
                   class="link link-hover text-base-content/80 hover:text-base-content active:text-base-content focus:text-base-content duration-100"
                   tabClass="tab tab-sm tab-lifted flex-1"
@@ -103,7 +102,7 @@
                         <!-- links on small screens -->
                         <div class="flow-root mt-6">
                             <div class="py-4">
-                                <NavTabs
+                                <Nav
                                     pages={headLinks}
                                     class="flex flex-col gap-y-4 items-start"
         
