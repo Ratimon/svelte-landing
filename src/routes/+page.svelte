@@ -163,7 +163,8 @@
 
 </script>
   
-<Header links={headLinks} class="bg-base-200 "></Header>
+<Header links={headLinks}  menuTitle={'Features'} dropDownLinks={headLinks} actionLink={headLinks[0]} class="bg-base-200 "></Header>
+
 <Hero></Hero>
 <Problem></Problem>
 <FeaturesListicle {featureLists} featureSelected={featureLists[0].title}></FeaturesListicle>

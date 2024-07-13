@@ -3,6 +3,7 @@
   
   import Icon from '@iconify/svelte';
   import Background from '$lib/ui/background/Background.svelte';
+  import ButtonPopoverCategories from  '$lib/ui/popover/ButtonPopoverCategories.svelte';
   import ButtonGradient from '$lib/ui/buttons/ButtonGradient.svelte';
   import Nav from '$lib/ui/header/Nav.svelte';
 
@@ -13,6 +14,11 @@
 	export {className as class};
 
   export let links : Link[];
+  export let menuTitle :string;
+  export let dropDownLinks : Link[];
+
+  export let actionLink :Link;  
+  
 
   let isOpen: boolean = false;
   const setIsOpen = (open : boolean) :void => {
@@ -49,11 +55,18 @@
           tabClass="tab tab-sm tab-lifted flex-1"
           whenSelected="tab-active font-black !bg-base-100"
         />
+        {#if dropDownLinks}
+          <ButtonPopoverCategories {dropDownLinks} {menuTitle} />
+        {/if}
+
       </div>
   
       <!-- CTA / Launch / Lead on big screens  -->
       <div class="hidden lg:flex lg:justify-end lg:flex-1">
-        <ButtonGradient title="Launch App" />
+        <a href={actionLink.pathname}>
+          <ButtonGradient title="Launch App" />
+        </a>
+        
       </div>
   
       <!-- Burger button to open menu on mobile  -->
@@ -110,7 +123,9 @@
             <div class="divider"></div>
             <!-- CTA / Launch / Lead on small screens  -->
             <div class="flex flex-col">
-              <ButtonGradient title="Launch App" />
+              <a href={actionLink.pathname}>
+                <ButtonGradient title="Launch App" />
+              </a>
             </div>
           </div>
   

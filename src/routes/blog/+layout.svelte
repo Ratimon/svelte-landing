@@ -11,10 +11,14 @@
     {pathname: '/blog', title: 'All Posts',navType: 'tab'}
   ];
 
-  const categoryLinks : Link[] = [
+  const dropDownLinks : Link[] = [
     {pathname: '/blog/category/feature', title: 'Feature', navType: 'tab'},
 	{pathname: '/blog/category/tutorial', title: 'Tutorial', navType: 'tab'},
   ];
+
+//   const actionLinks : Link[] = [
+//     {pathname: '/blog', title: 'Home',navType: 'tab'}
+//   ];
 
 </script>
 
@@ -50,7 +54,7 @@
 </svelte:head>
 
 
-<HeaderBlog headLinks={headLinks} categoryLinks={categoryLinks} class="bg-base-200 "></HeaderBlog>
+<HeaderBlog links={headLinks} menuTitle={'blog'} dropDownLinks={dropDownLinks} actionLink={headLinks[0]} class="bg-base-200"></HeaderBlog>
 
 <div class="min-h-screen flex flex-col">
   <slot />

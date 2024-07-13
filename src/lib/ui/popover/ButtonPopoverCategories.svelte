@@ -6,16 +6,18 @@
     import Background from '$lib/ui/background/Background.svelte';
     import Nav from '$lib/ui/header/Nav.svelte';
 
-    export let categoryLinks: Link[];
+    export let menuTitle: string = "Try these Features!!";
+    export let dropDownLinks: Link[];
 
 </script>
-  
+
+
 <Popover class="relative z-30" >
     <PopoverButton
         class="link no-underline flex flex-nowrap items-center gap-1 text-base-content/80 hover:text-base-content active:text-base-content focus:text-base-content duration-100"
         title="Open Blog Categories"
         >
-        Categories
+            {menuTitle}
         <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
@@ -28,20 +30,20 @@
       </svg>
     </PopoverButton>
 
-    <!-- todo -->
+    <!-- to do -->
     <!-- <Transition></Transition> -->
   
     <PopoverPanel class="absolute left-0 z-30 mt-3 w-screen max-w-full sm:max-w-sm transform">
         <div class="overflow-hidden rounded-box shadow-lg ring-1 ring-base-content ring-opacity-5">
-            <div class="relative grid gap-2 p-2 overflow-hidden">
-                <Background color="bg-base-100">
+            <Background color="bg-base-100">
+                <div class="relative grid gap-2 p-2 overflow-hidden">
                     <Nav
-                        pages={categoryLinks}
+                        pages={dropDownLinks}
                         class=""
                         tabClass="block text-left p-3 -m-1 cursor-pointer hover:bg-base-200 rounded-box duration-200"
                     />
-                </Background>
-            </div>
+                </div>
+            </Background>
         </div>
   
     </PopoverPanel>
