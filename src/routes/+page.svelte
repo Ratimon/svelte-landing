@@ -8,8 +8,8 @@
   import Header from '../lib/ui/templates/Header.svelte';
   import Hero from '$lib/ui/templates/Hero.svelte';
   import Problem from '$lib/ui/templates/Problem.svelte';
-  // import FeaturesAccordion from '$lib/ui/templates/FeaturesAccordion.svelte';
-  import FeaturesListicle from '$lib/ui/templates/FeaturesListicle.svelte';
+  import FeaturesAccordion from '$lib/ui/templates/FeaturesAccordion.svelte';
+  // import FeaturesListicle from '$lib/ui/templates/FeaturesListicle.svelte';
   import Pricing from '../lib/ui/templates/Pricing.svelte';
   import FAQ from '$lib/ui/templates/FAQ.svelte';
   import CTA from '../lib/ui/templates/CTA.svelte';
@@ -24,13 +24,6 @@
       {pathname: '#pricing', title: 'Pricing', navType: 'scroll'},
       {pathname: '/blog', title: 'Blog', navType: 'tab'},
   	];
-
-  // // in case you want to use the multiple pages app 
-  // const links = [
-	// 	    {pathname: '/', title: 'Home'},
-  //     	{pathname: '/testimonials', title: 'Reviews'},
-  //     	{pathname: '/faq', title: 'FAQ'},
-  // 	];
 
   const features = [
     {
@@ -167,8 +160,8 @@
 
 <Hero></Hero>
 <Problem></Problem>
-<FeaturesListicle {featureLists} featureSelected={featureLists[0].title}></FeaturesListicle>
-<!-- <FeaturesAccordion {features} ></FeaturesAccordion> -->
+<!-- <FeaturesListicle {featureLists} featureSelected={featureLists[0].title}></FeaturesListicle> -->
+<FeaturesAccordion {features} ></FeaturesAccordion>
 <Pricing {plans} keyToNav={headLinks[0].pathname}></Pricing>
 <FAQ {faqList} keyToNav={headLinks[1].pathname}></FAQ>
 <CTA></CTA>

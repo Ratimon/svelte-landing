@@ -3,11 +3,11 @@ import { error } from '@sveltejs/kit'
 
 export async function load({ fetch, params }) {
 	try {
-        const response = await fetch('/blog/api/posts')
-        const posts: PostData[] = await response.json()
+        // const response = await fetch('/blog/api/posts')
+        // const posts: PostData[] = await response.json()
 
 		return {
-			posts: posts,
+			// posts: posts,
             slug: params.slug
 		}
 		
