@@ -13,7 +13,6 @@
     // to do type
 	export let pages: Link[];
 
-
 </script>
 
 <div class={`tabs ${className}`}>
