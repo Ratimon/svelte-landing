@@ -1,18 +1,28 @@
-
-
 <script lang="ts">
-    
-    export let testinomialHighlighted: string = `I dont want to pay Stripe $2 for every invoice.`
-    export let testinomialDetail1: string = `I dont want to spend 10 minutes manually crafting every
+
+    import Background from '$lib/ui/background/Background.svelte';
+
+    export let quoteHighlighted: string = `I dont want to pay Stripe $2 for every invoice.`
+    export let quoteDetail1: string = `I dont want to spend 10 minutes manually crafting every
           invoice either.`
-    export let testinomialDetail2: string = `.... solved this problem once and for all. The app is simple,
+    export let quoteDetail2: string = `.... solved this problem once and for all. The app is simple,
           but it nails the job perfectly.`
     export let name: string = `Someone Nice`
     export let bio: string = `S23.1K followers on 𝕏`
 
+    export let companyName: string = `Company`
+    export let companyLink: string = `https://google.com/`
+
+    export let socialPlatform: string = `𝕏`
+    export let socialAccount: string = `@w`
+    export let socialLink: string = `https://twitter.com/`
+
+    export let bioImgPath: string = `/testimonials/2_bio.png`
+    export let companyImgPath: string = `/testimonials/2_company.png`
+
 </script>
 
-<section class="bg-base-100">
+<Background color="bg-base-100">
     <div class="space-y-6 md:space-y-8 max-w-lg mx-auto px-8 py-16 md:py-32 ">
       <div class="rating !flex justify-center">
 
@@ -33,27 +43,43 @@
       <div class="text-base leading-relaxed space-y-2 max-w-md mx-auto text-center">
         <p>
           <span class="bg-warning/25 px-1.5">
-            {testinomialHighlighted}
+            {quoteHighlighted}
           </span>{" "}
-            {testinomialDetail1}
+            {quoteDetail1}
         </p>
         <p>
-            {testinomialDetail2}
+            {quoteDetail2}
         </p>
       </div>
       <div class="flex justify-center items-center gap-3 md:gap-4">
         <img
           class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover"
-          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt={`XYZ feedback for ZenVoice`}
+          src={bioImgPath}
+          alt={`Profile`}
           width={48}
           height={48}
         />
         <div>
-          <p class="font-semibold">{name}</p>
+          <p class="font-semibold">
+            {name}
+          </p>
           
-          <p class="text-base-content/80 text-sm">{bio}</p>
+          <p class="text-base-content/80 text-sm">
+            {bio} @ <a class="bg-primary underline" href={companyLink} target="_blank" rel="noreferrer">{companyName}</a>
+          </p>
+
+          <p class="text-base-content/60">
+            {socialPlatform} @ <a class="bg-secondary underline" href={socialLink} target="_blank" rel="noreferrer">{socialAccount}</a>
+          </p>
+
         </div>
+        <img
+          width={150}
+          height={50}
+          class="w-20 md:w-24"
+          src={companyImgPath}
+          alt="Company logo"
+        />
       </div>
     </div>
-</section>
+</Background>

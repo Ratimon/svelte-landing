@@ -16,7 +16,8 @@
   import Footer from '../lib/ui/templates/Footer.svelte';
 
   import Testimonial1Small from "$lib/ui/testinomials/Testimonial1Small.svelte";
-
+  import Testimonials1 from "$lib/ui/testinomials/Testimonials1.svelte";
+  
 
   const headLinks : Link[] = [
       {pathname: '#pricing', title: 'Pricing', navType: 'scroll'},
@@ -167,6 +168,7 @@
 <FeaturesAccordion {features} ></FeaturesAccordion>
 <Pricing {plans} keyToNav={headLinks[0].pathname}></Pricing>
 <Testimonial1Small></Testimonial1Small>
+<Testimonials1></Testimonials1>
 <FAQ {faqList} keyToNav={headLinks[1].pathname}></FAQ>
 <CTA></CTA>
 <Footer links={footLinks}></Footer>
